@@ -1,7 +1,16 @@
-// import { CanActivateFn } from '@angular/router';
+// import { CanActivateFn, Router } from '@angular/router';
+// import { AuthService } from '../services/auth.service';
+// import { Injectable } from '@angular/core';
+
+
+
+// @Injectable({
+//   providedIn: 'root'
+// })
 
 // export const authGuard: CanActivateFn = (route, state) => {
-//   constructor(private authService: AuthService, private router: Router) {}
+//    AuthService: AuthService
+//    router: Router
 
 //   canActivate(): boolean {
 //     const userToken = this.authService.getUserToken();
@@ -16,3 +25,7 @@
 //     }
 //   }
 // };
+// function canActivate() {
+//   throw new Error('Function not implemented.');
+// }
+
