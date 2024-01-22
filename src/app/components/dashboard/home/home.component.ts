@@ -23,7 +23,10 @@ export class HomeComponent {
 
 
 
-  constructor(private router: Router, private authService: AuthService , private product:ProductService) { }
+  constructor(private router: Router, private authService: AuthService , private product:ProductService) {
+    this.myProducts = this.product.getProducts();
+    console.log(this.myProducts); 
+   }
 
   myProducts: Product[] = this.product.getProducts();
 

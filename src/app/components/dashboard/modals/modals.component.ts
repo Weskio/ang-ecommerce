@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-modals',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './modals.component.css'
 })
 export class ModalsComponent {
-
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }
