@@ -15,18 +15,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  // registerForm = this.fb.group({
-  //   name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
-  //   email: ['', [Validators.required, Validators.email]],
-  //   password: ['', Validators.required]
-  // }
-  // )
+  registerForm = this.fb.group({
+    name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required]
+  }
+  )
 
-  registerForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-  });
+  // registerForm = new FormGroup({
+  //   name: new FormControl('', Validators.required),
+  //   email: new FormControl('', Validators.required),
+  //   password: new FormControl('', Validators.required),
+  // });
 
   constructor(
     private fb: FormBuilder,
@@ -34,17 +34,17 @@ export class RegisterComponent {
     private router: Router
   ) { }
 
-  // get name() {
-  //   return this.registerForm.controls['name'];
-  // }
+  get name() {
+    return this.registerForm.controls['name'];
+  }
 
-  // get email() {
-  //   return this.registerForm.controls['email'];
-  // }
+  get email() {
+    return this.registerForm.controls['email'];
+  }
 
-  // get password() {
-  //   return this.registerForm.controls['password'];
-  // }
+  get password() {
+    return this.registerForm.controls['password'];
+  }
 
 
   submitDetails() {
