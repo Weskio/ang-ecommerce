@@ -1,31 +1,21 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { initFlowbite } from 'flowbite';
 import { AuthService } from '../../../services/auth.service';
-import { DashFrameworkComponent } from "../dash-framework/dash-framework.component";
-import { ModalsComponent } from "../modals/modals.component";
-import { Product } from '../../../interfaces/product';
-import { ProductService } from '../../../services/product.service';
-import { NgFor } from '@angular/common';
+import { initFlowbite } from 'flowbite';
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.css',
-    imports: [DashFrameworkComponent, ModalsComponent, NgFor]
+  selector: 'app-dash-framework',
+  standalone: true,
+  imports: [],
+  templateUrl: './dash-framework.component.html',
+  styleUrl: './dash-framework.component.css'
 })
-export class HomeComponent {
+export class DashFrameworkComponent {
 
   userName: string | undefined;
   email :string |undefined;
-  //products: Product | undefined
 
-
-
-  constructor(private router: Router, private authService: AuthService , private product:ProductService) { }
-
-  myProducts: Product[] = this.product.getProducts();
+  constructor(private router: Router, private authService: AuthService) { }
 
   logout() {
     this.authService.logout().subscribe(
