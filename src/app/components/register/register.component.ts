@@ -10,17 +10,23 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,HttpClientModule],
+  imports: [ReactiveFormsModule,HttpClientModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  registerForm = this.fb.group({
-    name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required]
-  }
-  )
+  // registerForm = this.fb.group({
+  //   name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
+  //   email: ['', [Validators.required, Validators.email]],
+  //   password: ['', Validators.required]
+  // }
+  // )
+
+  registerForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+  });
 
   constructor(
     private fb: FormBuilder,
@@ -28,24 +34,24 @@ export class RegisterComponent {
     private router: Router
   ) { }
 
-  get name() {
-    return this.registerForm.controls['name'];
-  }
+  // get name() {
+  //   return this.registerForm.controls['name'];
+  // }
 
-  get email() {
-    return this.registerForm.controls['email'];
-  }
+  // get email() {
+  //   return this.registerForm.controls['email'];
+  // }
 
-  get password() {
-    return this.registerForm.controls['password'];
-  }
+  // get password() {
+  //   return this.registerForm.controls['password'];
+  // }
 
 
   submitDetails() {
     const postData = { ...this.registerForm.value };
     this.authService.registerUser(postData as User).subscribe(
       response => {
-         this.router.navigate(['login'])
+         this.router.navigate([''])
       },
       error => {
       console.log('error') 

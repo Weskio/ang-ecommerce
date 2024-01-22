@@ -9,14 +9,20 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,HttpClientModule],
+  imports: [ReactiveFormsModule,HttpClientModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', Validators.required],
+
+  // loginForm = this.fb.group({
+  //   email: ['', [Validators.required, Validators.email]],
+  //   password: ['', Validators.required],
+  // });
+
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
 
   constructor(
@@ -25,12 +31,12 @@ export class LoginComponent {
     private router: Router,
   ) {}
 
-  get email() {
-    return this.loginForm.controls['email'];
-  }
-  get password() {
-    return this.loginForm.controls['password'];
-  }
+  // get email() {
+  //   return this.loginForm.controls['email'];
+  // }
+  // get password() {
+  //   return this.loginForm.controls['password'];
+  // }
 
   loginUser() {
     const { email, password } = this.loginForm.value;

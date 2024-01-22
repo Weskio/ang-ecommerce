@@ -18,63 +18,60 @@
           <h1 class="h1">Register a new account</h1>
           <div class="form-block w-form">
             <form
-              id="email-form"
-              name="email-form"
-              data-name="Email Form"
-              method="get"
-              data-ms-form="login"
-              class="form"
-              aria-label="Email Form"
-              [formGroup]="registerForm"
-               (ngSubmit)="submitDetails()"
-            >
-              <input
-                type="email"
-                class="text-field w-input"
-                maxlength="256"
-                formControlName="name"
-                data-name="Name"
-                placeholder="Your name"
-                id="name-2"
-                data-ms-member="email"
-              />
-
-              <input
-                type="email"
-                class="text-field w-input"
-                maxlength="256"
-                formControlName="email"
-                data-name="Email"
-                placeholder="Your e-mail"
-                id="Email-2"
-                data-ms-member="email"
-              />
-
-              <input
-                type="password"
-                class="text-field password w-input"
-                maxlength="256"
-                formControlName="password"
-                data-name="Password"
-                placeholder="Password"
-                id="Password"
-                data-ms-member="password"
-                required=""
-              />
-              <div class="links-wrap">
-                <div class="links">
-                  <a href="" class="link">Login</a
-                  >
-                </div>
-                <button
+            id="email-form"
+            name="email-form"
+            data-name="Email Form"
+            method="get"
+            data-ms-form="login"
+            class="form"
+            aria-label="Email Form"
+            [formGroup]="registerForm"
+            (ngSubmit)="submitDetails()"
+          >
+            <input
+              type="text"
+              class="text-field w-input"
+              maxlength="256"
+              formControlName="name"
+              placeholder="Your name"
+              id="name-2"
+              data-ms-member="name"
+            />
+          
+            <input
+              type="email"
+              class="text-field w-input"
+              maxlength="256"
+              formControlName="email"
+              placeholder="Your e-mail"
+              id="Email-2"
+              data-ms-member="email"
+            />
+          
+            <input
+              type="password"
+              class="text-field password w-input"
+              maxlength="256"
+              formControlName="password"
+              placeholder="Password"
+              id="Password"
+              data-ms-member="password"
+              required=""
+            />
+            <div class="links-wrap">
+              <div class="links">
+                <a href="" class="link">Login</a>
+              </div>
+              <button
                 [disabled]="registerForm.invalid"
                 type="submit"
                 class="bg-blue-600 p-2 rounded-lg hover:bg-blue-800 text-white font-semibold disabled:opacity-30"
               >
                 Sign Up
               </button>
-              </div>
-            </form>
+            </div>
+          </form>
+          
             <div
               class="w-form-done"
               tabindex="-1"
