@@ -54,12 +54,17 @@
             <input
               type="file"
               name="image"
-              src="https://i.pinimg.com/564x/fb/12/bd/fb12bd0c7731ae90ce68664fc8d8204d.jpg"
-              height="120px"
-              width="120px"
-              formControlName="image"
+              (change)="onImageChange($event)"
+              formControlName="imageFile"
             />
 
+            <img
+              *ngIf="addForm.get('imageFile')?.value"
+              [src]="getImagePreview(addForm.get('imageFile')?.value)"
+              class="h-80 w-72 object-cover rounded-xl"
+              width="180px"
+              height="180px"
+            />
             <label
               for="name"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -72,7 +77,7 @@
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               placeholder="Type product name"
               required=""
-              formControlName="name"
+              formControlName="title"
             />
           </div>
           <div class="col-span-2 sm:col-span-1">
@@ -120,7 +125,7 @@
               rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Write product description here"
-              formControlName="desc"
+              formControlName="description"
             ></textarea>
           </div>
         </div>
@@ -168,12 +173,13 @@
       *ngFor="let product of myProducts"
     >
       <img
-       [src]="product.image"
+        [src]="
+          product.imageFile ? getImagePreview(product.imageFile) : product.image
+        "
         class="h-80 w-72 object-cover rounded-xl"
         width="180px"
         height="180px"
       />
-
       <svg
         class="w-8 h-8 absolute hover:bg-red-400 top-5 left-60 bg-red-200 p-2 rounded-full text-red-700 dark:text-white cursor-pointer"
         aria-hidden="true"
@@ -192,17 +198,17 @@
         />
       </svg>
 
-
-
       <div
         class="p-4 product-desc bg-white absolute top-[80%] w-72 shadow-xl rounded-lg"
       >
         <p class="font-bold mb-1 line-clamp-1">{{ product.title }}</p>
 
-        <p class="text-slate-500 text-[0.7rem] line-clamp-2">{{ product.description }}</p>
+        <p class="text-slate-500 text-[0.7rem] line-clamp-2">
+          {{ product.description }}
+        </p>
 
         <div class="price flex w-full pb-6 mt-6">
-          <p class="font-bold">${{product.price}}</p>
+          <p class="font-bold">${{ product.price }}</p>
 
           <button
             data-modal-target="crud-modal"

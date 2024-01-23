@@ -5,7 +5,7 @@ import { Product } from '../interfaces/product';
   providedIn: 'root',
 })
 export class ProductService {
-  products: Product[] = [
+  products:Product[] = [
     {
       id: 1,
       title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
