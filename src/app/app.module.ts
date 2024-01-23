@@ -19,7 +19,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
@@ -41,7 +41,8 @@ import { EditTurfComponent } from './components/main-dashboard/edit-turf/edit-tu
     DashboardComponent,
     SidebarComponent,
     EarningsComponent,
-    EditTurfComponent
+    EditTurfComponent,
+    FormsModule
   ],
   imports: [
     BrowserModule,
