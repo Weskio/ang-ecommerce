@@ -21,12 +21,12 @@ export class DashFrameworkComponent {
     this.authService.logout().subscribe(
       () => {
         // Successful logout, navigate to the login page
-        this.router.navigate(['']);
+        this.router.navigate(['login']);
       },
       (error: any) => {
         console.error('Logout error:', error);
         // Navigate to the login page even if there's an error
-        this.router.navigate(['']);
+        this.router.navigate(['login']);
       }
     );
   }

@@ -51,7 +51,7 @@ export class RegisterComponent {
     const postData = { ...this.registerForm.value };
     this.authService.registerUser(postData as User).subscribe(
       response => {
-         this.router.navigate([''])
+         this.router.navigate(['login'])
       },
       error => {
       console.log('error') 

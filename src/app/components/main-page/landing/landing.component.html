@@ -1,1 +1,76 @@
-<p>landing works!</p>
+<div class="banner w-full h-[100vh] flex items-center bg-cover bg-fixed">
+  <div
+    class="newsletter bg-white p-3 w-[25vw] ml-auto mr-auto"
+    *ngIf="isNewsletterShown"
+  >
+    <svg
+      class="w-10 h-10 text-gray-500 cursor-pointer antialiased dark:text-white ml-auto"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      (click)="toggleNewsletter()"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18 18 6m0 12L6 6"
+      />
+    </svg>
+
+    <div class="text px-8">
+      <p
+        class="text-center news-title mt-4 font-semibold text-4xl dark:text-white"
+      >
+        Commandez dès maintenant vos galettes !
+      </p>
+
+      <p class="mt-4 text-center">
+        Commandez 48h00 en avance Dispo jusqu'à fin Janvier
+      </p>
+
+      <button
+        class="mt-8 w-full outline outline-black p-3 mb-8 hover:bg-black hover:text-white"
+      >
+        Passer Commander
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="main-page">
+  <div class="header flex p-4 font-semibold">
+    <div class="left ml-8 p-8">
+      <ul class="flex gap-4 cursor-pointer">
+        <li>Shop</li>
+        <li>Brunch</li>
+      </ul>
+    </div>
+    <img
+      src="https://assets-global.website-files.com/5c24a33f1110ec95beff12fa/5c24cb959a1575346185150d_kubo-logo.svg"
+      alt=""
+      width="60"
+      class="ml-auto cursor-pointer"
+    />
+    <div class="right ml-auto mr-8 p-8">
+      <ul class="flex gap-4 cursor-pointer">
+        <li>A Propos</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="body flex">
+    <div class="big ml-auto mr-auto">
+        <p class="text-[4rem] font-bold news-title leading-[62px] mr-44 mt-24 w-24">Pâtisserie <span class="italic">Artisanale</span></p>
+        <p class=" text-lg mt-4 mb-32">La matière au coeur de nos créations</p>
+    </div>
+
+    <div class="card-wrap">
+
+    </div>
+    
+  </div>
+</div>
