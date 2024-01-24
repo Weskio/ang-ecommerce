@@ -1,4 +1,5 @@
 <div class="banner w-full h-[100vh] flex items-center bg-cover bg-fixed">
+  @defer () {
   <div
     class="newsletter bg-white p-3 w-[25vw] ml-auto mr-auto"
     *ngIf="isNewsletterShown"
@@ -38,6 +39,7 @@
       </button>
     </div>
   </div>
+  } @loading(minimum 1.2s){}
 </div>
 
 <div class="main-page">
@@ -64,13 +66,407 @@
 
   <div class="body flex">
     <div class="big ml-auto mr-auto">
-        <p class="text-[4rem] font-bold news-title leading-[62px] mr-44 mt-24 w-24">Pâtisserie <span class="italic">Artisanale</span></p>
-        <p class=" text-lg mt-4 mb-32">La matière au coeur de nos créations</p>
+      <p
+        class="text-[4rem] font-bold news-title leading-[62px] mr-44 mt-24 w-24"
+      >
+        Pâtisserie <span class="italic">Artisanale</span>
+      </p>
+      <p class="text-lg mt-4 mb-32">La matière au coeur de nos créations</p>
     </div>
+  </div>
 
-    <div class="card-wrap">
+  <div class="card-wrap p-24">
+    <div
+      class="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+    >
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img h-[60vh] object-cover"
+          />
 
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img h-[60vh] object-cover"
+          />
+
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img h-[60vh] object-cover"
+          />
+
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img h-[60vh] object-cover"
+          />
+
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img h-[60vh] object-cover"
+          />
+
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img h-[60vh] object-cover"
+          />
+
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
     </div>
-    
   </div>
 </div>
+
+<div class="mb-[3vh] w-full">
+  <button
+    class="outline font-semibold hover:bg-yellow-300 ease-out duration-300 outline-[0.07rem] p-6 hover:p-8 hover:h-24 hover:w-24 h-20 w-20 flex items-center rounded-full ml-auto mr-auto mb-24"
+  >
+    Shop
+  </button>
+
+  <p class="news-title text-center w-[47vw] ml-auto mr-auto text-3xl pb-24">
+    Inspiré par le monde de la parfumerie, Kubo vous fait découvrir à travers
+    des accords de matières surprenants, de nouveaux territoires gustatifs.
+  </p>
+</div>
+
+<div class="additional-info flex gap-16 px-44 pb-32">
+  <div class="pic1">
+    <img
+      src="https://cdn.pixabay.com/photo/2014/01/09/09/35/deals-241042_1280.jpg"
+      alt=""
+      width=""
+      class="ml-auto rounded-md cursor-pointer w-[42vw] h-[70vh] object-cover"
+    />
+
+    <p class="w-96 ml-auto mr-24 font-semibold mt-24">
+      Chacune de nos créations est le fruit d’un travail minutieux, un accord de
+      matières de qualité pour obtenir un équilibre, une puissance des goûts
+      sans ajout de sucre
+    </p>
+
+    <p class="w-28 ml-auto mt-12">
+       <span class="outline mr-2"></span> En Savoir Plus
+    </p>
+  </div>
+
+  <img src="https://cdn.pixabay.com/photo/2022/09/01/09/07/shopping-mall-7425072_1280.jpg" alt="" class="w-[42vw] h-[90vh] mt-24 rounded-md object-cover">
+</div>
+
+<div class="our-shop px-60 flex gap-[30vw]  leading-[63px]">
+    <p class="news-title font-bold w-24 text-[4rem] italic">Our <span class="italic">Shop</span></p>
+   <ul>
+    <li>25, rue Jacques Louvel-Tessier</li>
+    <li class="-mt-6">75020 Paris</li>
+    <li class="-mt-6">T. 09 83 33 90 11</li>
+    <li class="-mt-6">contactkubo-patisserie.com</li>
+   </ul>
+</div>
+
+<div class="video-banner w-full">
+    <video
+    id="a2f4bccb-74e1-d18a-076c-e7d868ab7cbc-video"
+    autoplay=""
+    loop=""
+    style="
+      background-image: url('https://assets.website-files.com/625d2e77323b617decf7960c/628c8b7bfd4253436aa4ffee_Hero 20- video - website_1-poster-00001.jpg');
+    "
+    muted=""
+    playsinline=""
+    data-wf-ignore="true"
+    data-object-fit="cover"
+    class="w-full h-[65vh]"
+  >
+    <source
+      src="https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbcb1a5f0b2be_Hero%2020-%20video%20-%20website_1-transcode.mp4"
+      data-wf-ignore="true"
+    />
+    <source
+      src="https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbcb1a5f0b2be_Hero%2020-%20video%20-%20website_1-transcode.webm"
+      data-wf-ignore="true"
+    />
+  </video>
+</div>
+
+<div class="process-banner p-16 px-56">
+
+    <ul class="flex gap-96">
+        <li>
+            <div class="piece">
+                <img src="https://assets-global.website-files.com/5c24a33f1110ec95beff12fa/5c25d4403c78e55b598e04de_fabrication_a5b6b11d.svg" alt="" width="60" class="object-center">
+                <p class="font-semibold mt-4 text-lg -ml-4">Manufacture</p>
+                <p class=" mt-1 -ml-2 ">100% artisanal</p>
+            </div>
+        </li>
+
+        <li>
+            <div class="piece">
+                <img src="https://assets-global.website-files.com/5c24a33f1110ec95beff12fa/5c25d4403c78e55b598e04de_fabrication_a5b6b11d.svg" alt="" width="60" class="object-center">
+                <p class="font-semibold mt-4 text-lg -ml-4">Manufacture</p>
+                <p class=" mt-1 -ml-2 ">100% artisanal</p>
+            </div>
+        </li>
+
+        <li>
+            <div class="piece">
+                <img src="https://assets-global.website-files.com/5c24a33f1110ec95beff12fa/5c25d4403c78e55b598e04de_fabrication_a5b6b11d.svg" alt="" width="60" class="object-center">
+                <p class="font-semibold mt-4 text-lg -ml-4">Manufacture</p>
+                <p class=" mt-1 -ml-2 ">100% artisanal</p>
+            </div>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="footer h-24  p-16 px-56 bg-gray-100">
+
+    <ul class="flex gap-96">
+        <li>
+            <p class="text-2xl news-title font-semibold">Contact</p>
+            <p>contactubo-patisserie.com‍</p>
+        </li>
+
+        <li class="flex gap-3">
+            <img src="https://assets-global.website-files.com/5c24a33f1110ec95beff12fa/5c25d7f49a1575522286865b_logo-fb.svg" alt="" width="30px">
+            <img src="https://assets-global.website-files.com/5c24a33f1110ec95beff12fa/5c25d7f59a1575bc9f86865c_logo-insta.svg" alt="" width="30px">
+        </li>
+
+
+
+       
+
+    </ul>
+
+</div>
+
+
