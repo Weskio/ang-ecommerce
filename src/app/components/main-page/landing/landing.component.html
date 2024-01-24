@@ -1,7 +1,7 @@
 <div class="banner w-full h-[100vh] flex items-center bg-cover bg-fixed">
   @defer () {
   <div
-    class="newsletter bg-white p-3 w-[25vw] ml-auto mr-auto"
+    class="newsletter bg-white  p-3 mx-14 lg:mx-0 lg:w-[25vw] lg:ml-auto lg:mr-auto"
     *ngIf="isNewsletterShown"
   >
     <svg
@@ -33,7 +33,7 @@
       </p>
 
       <button
-        class="mt-8 w-full outline outline-black p-3 mb-8 hover:bg-black hover:text-white"
+        class="mt-8 w-full outline outline-[1px] rounded-sm outline-black p-3 mb-8 hover:bg-black hover:text-white"
       >
         Passer Commander
       </button>
@@ -67,20 +67,20 @@
   <div class="body flex">
     <div class="big ml-auto mr-auto">
       <p
-        class="text-[4rem] font-bold news-title leading-[62px] mr-44 mt-24 w-24"
+        class="text-[2.7rem]  leading-[44px] lg:text-[4rem] font-bold news-title lg:leading-[62px] ml-auto mr-32 lg:mr-44 mt-24 w-24"
       >
         Pâtisserie <span class="italic">Artisanale</span>
       </p>
-      <p class="text-lg mt-4 mb-32">La matière au coeur de nos créations</p>
+      <p class="lg:text-lg  mt-4 mb-0">La matière au coeur de nos créations</p>
     </div>
   </div>
 
-  <div class="card-wrap p-24">
+  <div class="card-wrap p-4 lg:p-24">
     <div
       class="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
     >
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
       >
         <div class="service-content-wrapper">
           <img
@@ -94,7 +94,7 @@
               https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
             "
             sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
-            class="whatson-img h-[60vh] object-cover"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
           />
 
           <div class="shop-item">
@@ -115,7 +115,7 @@
           </div>
 
           <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
             <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
             <p class="ml-auto text-white">$59.99</p>
@@ -124,7 +124,7 @@
       </div>
 
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
       >
         <div class="service-content-wrapper">
           <img
@@ -138,7 +138,7 @@
               https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
             "
             sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
-            class="whatson-img h-[60vh] object-cover"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
           />
 
           <div class="shop-item">
@@ -159,7 +159,7 @@
           </div>
 
           <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
             <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
             <p class="ml-auto text-white">$59.99</p>
@@ -168,7 +168,7 @@
       </div>
 
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
       >
         <div class="service-content-wrapper">
           <img
@@ -182,7 +182,7 @@
               https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
             "
             sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
-            class="whatson-img h-[60vh] object-cover"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
           />
 
           <div class="shop-item">
@@ -203,7 +203,7 @@
           </div>
 
           <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
             <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
             <p class="ml-auto text-white">$59.99</p>
@@ -212,7 +212,7 @@
       </div>
 
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
       >
         <div class="service-content-wrapper">
           <img
@@ -226,7 +226,7 @@
               https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
             "
             sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
-            class="whatson-img h-[60vh] object-cover"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
           />
 
           <div class="shop-item">
@@ -247,7 +247,7 @@
           </div>
 
           <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
             <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
             <p class="ml-auto text-white">$59.99</p>
@@ -256,7 +256,7 @@
       </div>
 
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
       >
         <div class="service-content-wrapper">
           <img
@@ -270,7 +270,7 @@
               https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
             "
             sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
-            class="whatson-img h-[60vh] object-cover"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
           />
 
           <div class="shop-item">
@@ -291,7 +291,7 @@
           </div>
 
           <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
             <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
             <p class="ml-auto text-white">$59.99</p>
@@ -300,7 +300,7 @@
       </div>
 
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block p-2 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
       >
         <div class="service-content-wrapper">
           <img
@@ -314,7 +314,7 @@
               https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
             "
             sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
-            class="whatson-img h-[60vh] object-cover"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
           />
 
           <div class="shop-item">
@@ -335,13 +335,59 @@
           </div>
 
           <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-[2.2%] bg-black bg-opacity-35 w-[89.3%]"
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
             <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
             <p class="ml-auto text-white">$59.99</p>
           </div>
         </div>
       </div>
+
+      <div
+        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-2  hover:scale-105 ease-in-out duration-300"
+      >
+        <div class="service-content-wrapper">
+          <img
+            src="https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg"
+            loading="lazy"
+            width="474"
+            alt=""
+            srcset="
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
+              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
+              https://cdn.pixabay.com/photo/2018/05/12/06/04/onesie-3392517_1280.jpg                                  948w
+            "
+            sizes="(max-width: 479px) 96vw, (max-width: 767px) 97vw, (max-width: 991px) 98vw, 100vw"
+            class="whatson-img lg:lg:h-[60vh] object-cover"
+          />
+
+          <div class="shop-item">
+            <svg
+              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-yellow-300 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.3 6A2 2 0 0 0 14 9h1v1a2 2 0 0 0 3 1.7l-.3 1.5a1 1 0 0 1-1 .8h-8l.2 1H16a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L4.7 5H4a1 1 0 0 1 0-2h1.5c.5 0 .9.3 1 .8L6.9 6h5.4Z"
+              />
+              <path
+                d="M18 4a1 1 0 1 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0V8h2a1 1 0 1 0 0-2h-2V4Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
+          >
+            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
+            <p class="ml-auto text-white">$59.99</p>
+          </div>
+        </div>
+      </div>
+
+      
     </div>
   </div>
 </div>
@@ -353,19 +399,19 @@
     Shop
   </button>
 
-  <p class="news-title text-center w-[47vw] ml-auto mr-auto text-3xl pb-24">
+  <p class="news-title text-center px-12 lg:w-[47vw] ml-auto mr-auto text-3xl pb-24">
     Inspiré par le monde de la parfumerie, Kubo vous fait découvrir à travers
     des accords de matières surprenants, de nouveaux territoires gustatifs.
   </p>
 </div>
 
-<div class="additional-info flex gap-16 px-44 pb-32">
+<div class="additional-info flex gap-16 lg:px-44 pb-32">
   <div class="pic1">
     <img
       src="https://cdn.pixabay.com/photo/2014/01/09/09/35/deals-241042_1280.jpg"
       alt=""
       width=""
-      class="ml-auto rounded-md cursor-pointer w-[42vw] h-[70vh] object-cover"
+      class="ml-auto rounded-md cursor-pointer w-[42vw] lg:h-[70vh] object-cover"
     />
 
     <p class="w-96 ml-auto mr-24 font-semibold mt-24">
