@@ -36,6 +36,8 @@ export class HomeComponent {
   userName: string | undefined;
   email: string | undefined;
   productCommunicationService: any;
+  
+  imageUrl: any;
   // addForm: any= {
   //   name: "",
   //   desc: "",
@@ -78,6 +80,16 @@ export class HomeComponent {
       return this.addForm.get('image')?.value;
     }
     return ''; // or a default URL for no image
+  }
+
+  onSelectedFile(e: any) {
+    if (e.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (event: any) => {
+        this.imageUrl = event.target.result;
+      };
+    }
   }
   
   addProduct() {
