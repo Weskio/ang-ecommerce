@@ -10,4 +10,15 @@ import { HeaderComponent } from "../header/header.component";
 })
 export class SingleProductComponent {
 
+    i:number =0;
+
+    addItem(){
+        this.i++;
+    }
+
+    removeItem() {
+        this.i = this.i === 0 ? 0 : this.i - 1;
+    }
+    
+
 }
