@@ -1,8 +1,8 @@
 <div class="header flex p-4 font-semibold">
     <div class="left ml-8 p-8">
       <ul class="flex gap-4 cursor-pointer">
-        <a href="/single-product"><li>Shop</li></a>
-        <li>Brunch</li>
+        <a href="/all-products" class="hover:-translate-y-1 ease-in-out duration-300"><li>Shop</li></a>
+        <li class="hover:-translate-y-1 ease-in-out duration-300">Brunch</li>
       </ul>
     </div>
     <img
@@ -10,11 +10,15 @@
       alt=""
       width="60"
       class="ml-auto cursor-pointer"
+      href="/login"
+      
     />
     <div class="right ml-auto mr-8 p-8">
       <ul class="flex gap-4 cursor-pointer">
-        <li>A Propos</li>
-        <li>Contact</li>
+        <a href="/login"><li class="hover:-translate-y-1 ease-in-out duration-300">Login</li></a>
+        <a href="/signup">
+            <li class="hover:-translate-y-1 ease-in-out duration-300">Register</li>
+        </a>
       </ul>
     </div>
   </div>
