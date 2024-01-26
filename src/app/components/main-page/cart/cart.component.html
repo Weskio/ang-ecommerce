@@ -1,56 +1,63 @@
-<div class="absolute shadow w-[45%] lg:w-[68%] h-full bg-black z-30 opacity-40" ></div>
+<div
+  class="absolute shadow w-[45%] lg:w-[68%] h-full bg-black z-30 opacity-40"
+></div>
 
-<div class="cart absolute top-0 w-[55%] lg:w-[32%] h-full right-0 bg-white z-40" >
-    <div class="head py-6 px-4 border-b flex">
-      <p class="text-lg font-bold">your basket</p>
+<div
+  class="cart absolute top-0 w-[55%] lg:w-[32%] h-full right-0 bg-white z-40"
+>
+  <div class="head py-6 px-4 border-b flex">
+    <p class="text-lg font-bold">your basket</p>
 
-      <svg
-        class="w-7 h-7 ml-auto text-gray-800 cursor-pointer dark:text-white"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        (click)="onCloseCart()"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18 18 6m0 12L6 6"
-        />
-      </svg>
-    </div>
+    <svg
+      class="w-7 h-7 ml-auto text-gray-800 cursor-pointer dark:text-white"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      (click)="onCloseCart()"
+    >
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18 18 6m0 12L6 6"
+      />
+    </svg>
+  </div>
 
-    <div class="body p-4">
-      <div class="basket-item flex">
-        <img
-          src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-          alt=""
-          class="w-32 h-32 object-cover"
-        />
+  <div class="body p-4">
+    <div class="basket-item flex">
+      <img
+        src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
+        alt=""
+        class="w-32 h-32 object-cover"
+      />
 
-        <div class="ml-4">
-          <p class="text-lg font-bold">Tarte Pistache d'Iran</p>
-          <p class="text-2xl font-bold">6,40 €</p>
+      <div class="ml-4">
+        <p class="text-lg font-bold">Tarte Pistache d'Iran</p>
+        <p class="text-2xl font-bold">6,40 €</p>
 
-          <p class="text-sm text-red-500 cursor-pointer">Delete</p>
-        </div>
-
-        <p class="ml-auto border h-6 p-4 flex items-center">{{i}}</p>
-      </div>
-    </div>
-
-    <div class="footer mt-auto border-t p-4">
-      <div class="w-full flex justify-between">
-        <p class="text-2xl font-bold">Total</p>
-        <p class="text-3xl font-bold">6,40 € </p>
+        <p class="text-sm text-red-500 cursor-pointer">Delete</p>
       </div>
 
-      <button
+      <p class="ml-auto border h-6 p-4 flex items-center">{{ i }}</p>
+    </div>
+  </div>
+
+  <div class="footer mt-auto border-t p-4">
+    <div class="w-full flex justify-between">
+      <p class="text-2xl font-bold">Total</p>
+      <p class="text-3xl font-bold">6,40 €</p>
+    </div>
+
+    <a href="/checkout"
+      ><button
+        href="/checkout"
         class="w-full mt-5 outline outline-[1px] hover:bg-black hover:text-white outline-black font-bold py-3"
       >
         Checkout
-      </button>
-    </div>
+      </button></a
+    >
   </div>
+</div>
