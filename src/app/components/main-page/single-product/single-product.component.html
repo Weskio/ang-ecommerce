@@ -1,5 +1,8 @@
 <div class="relative">
   <app-header class="absolute top-0 w-full bg-white bg-opacity-30" />
+
+ <app-cart *ngIf="isCartShown" />
+
   <div class="hero lg:flex h-[100vh] w-full">
     <img
       src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
@@ -8,7 +11,7 @@
     />
 
     <div
-      class="product-details mt-44  lg:mt-0 lg:h-[100vh] flex items-center w-full lg:w-[45vw] h-[35vh]"
+      class="product-details mt-44 lg:mt-0 lg:h-[100vh] flex items-center w-full lg:w-[45vw] h-[35vh]"
     >
       <div class="text w-96 ml-auto mr-auto">
         <p class="text-[3.3rem] leading-[60px] font-bold news-title">
@@ -20,13 +23,21 @@
 
         <div class="add-cart flex">
           <div class="number outline outline-[1px] flex">
-            <button class="text-black font-bold py-4 px-2" (click)="removeItem()">-</button>
-            <p class="text-black font-bold py-4 px-2">{{i}}</p>
-            <button class="text-black font-bold py-4 px-2" (click)="addItem()">+</button>
+            <button
+              class="text-black font-bold py-4 px-2"
+              (click)="removeItem()"
+            >
+              -
+            </button>
+            <p class="text-black font-bold py-4 px-2">{{ i }}</p>
+            <button class="text-black font-bold py-4 px-2" (click)="addItem()">
+              +
+            </button>
           </div>
 
           <button
             class="outline hover:bg-black hover:text-white outline-[1px] text-black font-bold py-4 px-4"
+            (click)="showCart()"
           >
             Add to cart
           </button>
@@ -37,7 +48,8 @@
           <p class="mt-4 mb-16">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
             quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Magnam dolore perferendis quia! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Magnam dolore perferendis quia! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit.
           </p>
         </div>
       </div>

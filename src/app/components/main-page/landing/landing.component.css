@@ -15,3 +15,22 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+.vid-banner{
+  width: 100vw;
+}
+
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+}
+.video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
