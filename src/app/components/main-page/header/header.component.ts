@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartComponent } from "../cart/cart.component";
 import { NgIf } from '@angular/common';
 
@@ -10,6 +10,8 @@ import { NgIf } from '@angular/common';
     imports: [CartComponent, NgIf]
 })
 export class HeaderComponent {
+
+  @Input() showCartButton: boolean = true;
 
   isCartShown = false;
   

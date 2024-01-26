@@ -5,14 +5,15 @@ import { Router } from '@angular/router';
 import { User } from '../../interfaces/auth';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from "../main-page/header/header.component";
 //import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [ReactiveFormsModule,HttpClientModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    standalone: true,
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css',
+    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent]
 })
 export class RegisterComponent {
   registerForm = this.fb.group({

@@ -5,13 +5,14 @@ import { Router } from '@angular/router';
 import { User } from '../../interfaces/auth';
 import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from "../main-page/header/header.component";
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule,HttpClientModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+    selector: 'app-login',
+    standalone: true,
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
+    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent]
 })
 export class LoginComponent {
 

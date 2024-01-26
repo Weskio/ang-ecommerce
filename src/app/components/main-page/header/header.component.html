@@ -19,7 +19,7 @@
     class="ml-auto cursor-pointer"
     href="/login"
   />
-  <div class="right ml-auto mr-8 p-8">
+  <div class="right ml-auto mr-8 p-8" >
     <ul class="flex gap-4 cursor-pointer">
       <a href="/login"
         ><li class="hover:-translate-y-1 ease-in-out duration-300">Login</li></a
@@ -27,8 +27,8 @@
       <a href="/signup">
         <li class="hover:-translate-y-1 ease-in-out duration-300">Register</li>
       </a>
-      <button (click)="showCart()">
-        <li class=" flex gap-1">
+      <button (click)="showCart()" >
+        <li class=" flex gap-1" *ngIf="showCartButton">
           Cart
 
           <svg
