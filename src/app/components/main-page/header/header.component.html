@@ -1,3 +1,6 @@
+<app-cart *ngIf="isCartShown" (closeCart)="isCartShown = false" />
+
+
 <div class="header flex p-4 font-semibold">
   <div class="left ml-8 p-8">
     <ul class="flex gap-4 cursor-pointer">
@@ -24,7 +27,7 @@
       <a href="/signup">
         <li class="hover:-translate-y-1 ease-in-out duration-300">Register</li>
       </a>
-      <a href="/signup">
+      <button (click)="showCart()">
         <li class=" flex gap-1">
           Cart
 
@@ -44,7 +47,7 @@
             />
           </svg>
         </li>
-      </a>
+      </button>
     </ul>
   </div>
 </div>

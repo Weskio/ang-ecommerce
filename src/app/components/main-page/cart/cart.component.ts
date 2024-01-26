@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -11,10 +11,16 @@ import { Component } from '@angular/core';
 export class CartComponent {
 
   i:number =0;
-  isCartShown= false
+  @Output() closeCart: EventEmitter<void> = new EventEmitter<void>();
+  isCartShown = false;
 
-  showCart(){
-      this.isCartShown = !this.isCartShown
+  showCart() {
+    this.isCartShown = !this.isCartShown;
+  }
+
+  onCloseCart() {
+    this.isCartShown = false;
+    this.closeCart.emit();
   }
 
 }
