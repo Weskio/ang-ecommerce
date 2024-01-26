@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 
@@ -11,6 +11,16 @@ import { FooterComponent } from "../footer/footer.component";
     imports: [NgIf, HeaderComponent, FooterComponent]
 })
 export class LandingComponent {
+
+  @Input() youtubeId?: string ;
+
+  constructor(private el: ElementRef) {}
+
+  ngAfterViewInit() {
+    const videoElement: HTMLVideoElement = this.el.nativeElement;
+    const videoUrl = `https://www.youtube.com/embed/${this.youtubeId}?autoplay=1&loop=1&playlist=${this.youtubeId}`;
+    videoElement.src = videoUrl;
+  }
 
   isNewsletterShown= true
 
