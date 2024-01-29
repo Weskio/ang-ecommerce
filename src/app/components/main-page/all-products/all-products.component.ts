@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
     standalone: true,
     templateUrl: './all-products.component.html',
     styleUrl: './all-products.component.css',
-    imports: [HeaderComponent, FooterComponent,NgFor,RouterLink]
+    imports: [HeaderComponent, FooterComponent,NgFor,RouterLink,]
 })
 export class AllProductsComponent {
 
