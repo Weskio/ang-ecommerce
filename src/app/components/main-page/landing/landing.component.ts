@@ -4,13 +4,14 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
-  imports: [NgIf, HeaderComponent, FooterComponent, NgFor],
+  imports: [NgIf, HeaderComponent, FooterComponent, NgFor, RouterLink],
 })
 export class LandingComponent {
   isNewsletterShown = true;
