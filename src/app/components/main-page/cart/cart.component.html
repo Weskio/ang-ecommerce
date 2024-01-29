@@ -30,15 +30,15 @@
     <!-- cart.component.html -->
 <div *ngIf="items.length > 0; else emptyCart" >
 
-  <div class="overflow-y-scroll scroll h-[60%] ">
-    <div class="basket-item flex mb-5 "*ngFor="let item of items">
+  <div class="overflow-y-scroll h-[500px] scrollbar-hide ">
+    <div class="basket-item flex scroll mb-5 "*ngFor="let item of items">
       <img [src]="item.image" alt="" class="w-32 h-32 object-cover">
       <div class="ml-4">
         <p class="text-lg font-bold">{{ item.title }}</p>
         <p class="text-2xl font-bold">{{ item.price }} €</p>
         <p class="text-sm text-red-500 cursor-pointer" (click)="removeFromCart(item)">Delete</p>
       </div>
-      <p class="ml-auto border h-6 p-4 flex items-center">{{item.quantity}}</p>
+      <!-- <p class="ml-auto border h-6 p-4 flex items-center">{{item.quantity}}</p> -->
     </div>
   </div>
   <div class="foote bg-white  bottom-0 absolute w-full border-t p-4 pr-12">

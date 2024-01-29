@@ -15,14 +15,20 @@ items: Product[] = [];
   }
 
   removeFromCart(product: Product) {
-    this.items = this.items.filter(item => item !== product);
+    const index = this.items.findIndex(item => item === product);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
   }
+  
 
   getItems(): Product[] {
     return this.items;
   }
 
   getTotalPrice(): number {
-    return this.items.reduce((acc, item) => acc + item.price, 0);
+    const totalPrice = this.items.reduce((acc, item) => acc + item.price, 0);
+    return parseFloat(totalPrice.toFixed(2));
   }
+  
 }

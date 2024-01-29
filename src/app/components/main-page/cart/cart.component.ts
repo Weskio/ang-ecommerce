@@ -12,7 +12,7 @@ import { Product } from '../../../interfaces/product';
 })
 export class CartComponent {
 
-  i:number =0;
+  quantity:number =0;
   @Output() closeCart: EventEmitter<void> = new EventEmitter<void>();
   isCartShown = false;
   items: Product[] = [];

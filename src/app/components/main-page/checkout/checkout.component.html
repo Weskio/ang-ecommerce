@@ -104,61 +104,26 @@
         </div>
       
         <div class="body p-4">
-          <div class="basket-item flex">
-            <img
-              src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-              alt=""
-              class="w-32 h-32 object-cover"
-            />
-      
-            <div class="ml-4">
-              <p class="text-lg font-bold">Tarte Pistache d'Iran</p>
-              <p class="text-2xl font-bold">6,40 €</p>
-      
-              <p class="text-sm text-red-500 cursor-pointer">Delete</p>
+         
+
+          <div class="overflow-y-scroll h-[500px] scrollbar-hide ">
+            <div class="basket-item flex scroll mb-5 "*ngFor="let item of items">
+              <img [src]="item.image" alt="" class="w-32 h-32 object-cover">
+              <div class="ml-4">
+                <p class="text-lg font-bold">{{ item.title }}</p>
+                <p class="text-2xl font-bold">{{ item.price }} €</p>
+                <p class="text-sm text-red-500 cursor-pointer" (click)="removeFromCart(item)">Delete</p>
+              </div>
+              <!-- <p class="ml-auto border h-6 p-4 flex items-center">{{item.quantity}}</p> -->
             </div>
-      
-            <p class="ml-auto border h-6 p-4 flex items-center">6</p>
           </div>
 
-          <div class="basket-item mt-6 flex">
-            <img
-              src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-              alt=""
-              class="w-32 h-32 object-cover"
-            />
-      
-            <div class="ml-4">
-              <p class="text-lg font-bold">Tarte Pistache d'Iran</p>
-              <p class="text-2xl font-bold">6,40 €</p>
-      
-              <p class="text-sm text-red-500 cursor-pointer">Delete</p>
-            </div>
-      
-            <p class="ml-auto border h-6 p-4 flex items-center">6</p>
-          </div>
+          
 
-          <div class="basket-item mt-6 flex">
-            <img
-              src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-              alt=""
-              class="w-32 h-32 object-cover"
-            />
-      
-            <div class="ml-4">
-              <p class="text-lg font-bold">Tarte Pistache d'Iran</p>
-              <p class="text-2xl font-bold">6,40 €</p>
-      
-              <p class="text-sm text-red-500 cursor-pointer">Delete</p>
-            </div>
-      
-            <p class="ml-auto border h-6 p-4 flex items-center">6</p>
-          </div>
-
-          <div class="footer mt-12 border-t p-4">
+          <div class="foote bg-white  bottom-0 absolute w-full border-t p-4 pr-12">
             <div class="w-full flex justify-between">
               <p class="text-2xl font-bold">Total</p>
-              <p class="text-3xl font-bold">6,40 €</p>
+              <p class="text-3xl font-bold">{{total}} €</p>
             </div>
 
             <div class="coupon flex gap-3">
