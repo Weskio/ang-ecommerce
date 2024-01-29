@@ -31,7 +31,8 @@ export class ProductService {
       "description": "Omnis voluptatem alias odit voluptatem voluptate. Quibusdam ut aut. Ducimus suscipit vero. Sint aut ut nulla aut vel nihil est amet.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/04/42/f5/0442f5bb3e7f0f1f088dc3ff87a3fc7e.jpg",
-      "rating": { "rate": 2.4, "count": 99 }
+      "rating": { "rate": 2.4, "count": 99 },
+      "featured": true
     },
     {
       "id": 4,
@@ -58,7 +59,8 @@ export class ProductService {
       "description": "Quia ut illo enim magnam autem quas rem. Aspernatur alias est amet ea voluptatem dolorem quam ex. Ut magni eius doloribus sint quia sunt.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/7b/88/c5/7b88c50e2f7e616d58682921e5ffaa3f.jpg",
-      "rating": { "rate": 4.9, "count": 211 }
+      "rating": { "rate": 4.9, "count": 211 },
+      "featured": true
     },
     {
       "id": 7,
@@ -84,7 +86,7 @@ export class ProductService {
       "price": 15,
       "description": "Tempora sit perspiciatis sint non molestias. Vel et autem rerum id cumque nihil. Quo temporibus enim fugit velit eum veritatis quia.",
       "category": "Women's Beauty",
-      "image": "https://i.pinimg.com/564x/93/98/2e/93982ef8a0d4396dcdfbb5dd141ed216.jpg",
+      "image": "https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg",
       "rating": { "rate": 4.5, "count": 96 }
     },
     {
@@ -94,7 +96,8 @@ export class ProductService {
       "description": "Atque cumque illo. Aut facilis temporibus earum sunt modi. Quia quaerat asperiores placeat veniam consequatur non. Architecto eum et voluptatem laborum et iure velit.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/67/32/49/673249e56aa380875c1421bf63a22485.jpg",
-      "rating": { "rate": 3.9, "count": 425 }
+      "rating": { "rate": 3.9, "count": 425 },
+      "featured": true
     },
     {
       "id": 11,
@@ -103,7 +106,8 @@ export class ProductService {
       "description": "Voluptatem ut quisquam voluptatum id et. Ut qui ea fugit sunt odio. Mollitia nisi et eum. Necessitatibus possimus exercitationem doloribus. Qui dolorem in est dolor et sint.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/ff/04/d8/ff04d8eb02b806dcfb8ab094220751d2.jpg",
-      "rating": { "rate": 3.6, "count": 148 }
+      "rating": { "rate": 3.6, "count": 148 },
+      "featured": true
     },
     {
       "id": 12,
@@ -175,7 +179,8 @@ export class ProductService {
       "description": "Quasi quae in cumque quae alias. Dolorem facilis eos in. Ipsam odio veritatis eum. Sequi voluptas deserunt illum veniam.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/bc/b6/75/bcb67544ea51c6ab1b53c65165d74a8b.jpg",
-      "rating": { "rate": 4.0, "count": 367 }
+      "rating": { "rate": 4.0, "count": 367 },
+      "featured": true
     },
     {
       "id": 20,
@@ -211,7 +216,8 @@ export class ProductService {
       "description": "Voluptatem sint quaerat ut eius. Soluta veniam eius quia non nesciunt odio enim et. Laborum et et fugiat aut quia sint.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/f4/13/f3/f413f35531e54151f93a9a70b17c5b8e.jpg",
-      "rating": { "rate": 2.4, "count": 99 }
+      "rating": { "rate": 2.4, "count": 99 },
+      "featured": true
     },
     {
       "id": 24,
@@ -238,7 +244,8 @@ export class ProductService {
       "description": "Ut rerum nihil repellendus dignissimos explicabo illum ex. Ad et repellat rerum officia non. Ipsa aut sed exercitationem nihil aliquam.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/92/fc/58/92fc58326c3e6b4edfdb4697f1dcdaad.jpg",
-      "rating": { "rate": 4.9, "count": 211 }
+      "rating": { "rate": 4.9, "count": 211 },
+      "featured": true
     },
     {
       "id": 27,
@@ -247,7 +254,7 @@ export class ProductService {
       "description": "Omnis nulla voluptas in aut eius. Consequatur qui et. Earum a vero. Earum dolorum incidunt velit et et soluta.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/62/35/3d/62353dd0549c333d634168c975d0d8eb.jpg",
-      "rating": { "rate": 4.2, "count": 447 }
+      "rating": { "rate": 4.2, "count": 447 },
     },
     {
       "id": 28,
@@ -265,7 +272,8 @@ export class ProductService {
       "description": "Quia sed id. Qui molestiae accusantium eos possimus omnis eius. Omnis molestias eum ad omnis.",
       "category": "Women's Beauty",
       "image": "https://i.pinimg.com/564x/ef/95/d7/ef95d70f23484770cd06536a87bd9012.jpg",
-      "rating": { "rate": 3.6, "count": 148 }
+      "rating": { "rate": 3.6, "count": 148 },
+      "featured": true
     },
     {
       "id": 30,
@@ -285,6 +293,10 @@ export class ProductService {
 
   getProductsById(id: number){
     return this.products.find((product) => product.id === id)
+  }
+
+  getFeaturedProducts(){
+    return this.products.filter((item) => item.featured===true)
   }
 
   constructor() {}

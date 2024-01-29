@@ -1,31 +1,25 @@
-import { NgIf } from '@angular/common';
-import { Component, ElementRef, Input } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
-import { FooterComponent } from "../footer/footer.component";
+import { NgFor, NgIf } from '@angular/common';
+import { Component, ElementRef, Input, inject } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
+import { ProductService } from '../../../services/product.service';
+import { Product } from '../../../interfaces/product';
 
 @Component({
-    selector: 'app-landing',
-    standalone: true,
-    templateUrl: './landing.component.html',
-    styleUrl: './landing.component.css',
-    imports: [NgIf, HeaderComponent, FooterComponent]
+  selector: 'app-landing',
+  standalone: true,
+  templateUrl: './landing.component.html',
+  styleUrl: './landing.component.css',
+  imports: [NgIf, HeaderComponent, FooterComponent, NgFor],
 })
 export class LandingComponent {
-
-  @Input() youtubeId?: string ;
-
-  constructor(private el: ElementRef) {}
-
-  ngAfterViewInit() {
-    const videoElement: HTMLVideoElement = this.el.nativeElement;
-    const videoUrl = `https://www.youtube.com/embed/${this.youtubeId}?autoplay=1&loop=1&playlist=${this.youtubeId}`;
-    videoElement.src = videoUrl;
-  }
-
-  isNewsletterShown= true
+  isNewsletterShown = true;
 
   toggleNewsletter() {
-    this.isNewsletterShown = false
+    this.isNewsletterShown = false;
   }
 
+  products = inject(ProductService);
+
+  featuredProducts: Product[] = this.products.getFeaturedProducts()
 }

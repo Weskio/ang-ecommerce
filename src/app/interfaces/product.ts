@@ -8,4 +8,5 @@ export interface Product {
   rating?: {}; // Optional property (add it if needed)
   category?: string;
   quantity?: number;
+  featured?:boolean
 }

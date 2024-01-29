@@ -61,21 +61,18 @@
   <div class="card-wrap p-4 lg:p-24">
     <div
       class="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+      
     >
       <div
         class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
+        *ngFor = "let product of featuredProducts"
       >
         <div class="service-content-wrapper">
           <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
+            [src]="product.image"
             loading="lazy"
             width="474"
             alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
             class="whatson-img w-full lg:lg:h-[60vh] object-cover"
           />
           <div class="shop-item">
@@ -99,274 +96,12 @@
           <div
             class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
+            <h3 class="news-title text-2xl font-bold text-white">{{product.title}}</h3>
+            <p class="ml-auto text-white">${{product.price}}</p>
           </div>
         </div>
       </div>
 
-      <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-      >
-        <div class="service-content-wrapper">
-          <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-            loading="lazy"
-            width="474"
-            alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
-          />
-
-          <div class="shop-item">
-            <svg
-              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-black dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"
-              />
-            </svg>
-          </div>
-
-          <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
-          >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-      >
-        <div class="service-content-wrapper">
-          <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-            loading="lazy"
-            width="474"
-            alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
-          />
-          <div class="shop-item">
-            <svg
-              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-black dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"
-              />
-            </svg>
-          </div>
-
-          <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
-          >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-      >
-        <div class="service-content-wrapper">
-          <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-            loading="lazy"
-            width="474"
-            alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
-          />
-
-          <div class="shop-item">
-            <svg
-              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-black dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"
-              />
-            </svg>
-          </div>
-
-          <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
-          >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-      >
-        <div class="service-content-wrapper">
-          <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-            loading="lazy"
-            width="474"
-            alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
-          />
-
-          <div class="shop-item">
-            <svg
-              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-black dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"
-              />
-            </svg>
-          </div>
-
-          <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
-          >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-      >
-        <div class="service-content-wrapper">
-          <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-            loading="lazy"
-            width="474"
-            alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
-          />
-
-          <div class="shop-item">
-            <svg
-              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-black dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"
-              />
-            </svg>
-          </div>
-
-          <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
-          >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-      >
-        <div class="service-content-wrapper">
-          <img
-            src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
-            loading="lazy"
-            width="474"
-            alt=""
-            srcset="
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-500.jpeg 500w,
-              https://assets.website-files.com/6297a85b623dbc4d2af0b225/6297a85b623dbc0e34f0b24e_Toca-test-p-800.jpeg 800w,
-              https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg                                 948w
-            "
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
-          />
-
-          <div class="shop-item">
-            <svg
-              class="w-20 h-20 absolute invisible group-hover:visible cursor-pointer p-2 top-[40%] left-[39%] bg-white bg-opacity-40 text-black dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"
-              />
-            </svg>
-          </div>
-
-          <div
-            class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
-          >
-            <h3 class="news-title text-2xl font-bold text-white">Coca Cola</h3>
-            <p class="ml-auto text-white">$59.99</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
