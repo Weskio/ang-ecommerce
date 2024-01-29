@@ -218,5 +218,9 @@ export class ProductService {
     return this.products;
   }
 
+  getProductsById(id: number){
+    return this.products.find((product) => product.id === id)
+  }
+
   constructor() {}
 }

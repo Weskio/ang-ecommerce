@@ -10,7 +10,7 @@ import { CheckoutComponent } from './components/main-page/checkout/checkout.comp
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'single-product', component: SingleProductComponent },
+  { path: 'single-product/:id', component: SingleProductComponent },
   { path: 'all-products', component: AllProductsComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'login', component: LoginComponent },

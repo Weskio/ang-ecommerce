@@ -4,13 +4,14 @@ import { FooterComponent } from "../footer/footer.component";
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
 import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-all-products',
     standalone: true,
     templateUrl: './all-products.component.html',
     styleUrl: './all-products.component.css',
-    imports: [HeaderComponent, FooterComponent,NgFor]
+    imports: [HeaderComponent, FooterComponent,NgFor,RouterLink]
 })
 export class AllProductsComponent {
 

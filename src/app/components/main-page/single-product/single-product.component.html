@@ -15,9 +15,9 @@
     >
       <div class="text w-96 ml-auto mr-auto">
         <p class="text-[3.3rem] leading-[60px] font-bold news-title">
-          Tarte Pistache d'Iran
+          {{products?.title}}
         </p>
-        <p class="text-2xl mt-6 news-title font-semibold">6,40 €</p>
+        <p class="text-2xl mt-6 news-title font-semibold">{{products?.price}} €</p>
 
         <p class="font-bold mt-8">Size</p>
 
@@ -46,10 +46,7 @@
         <div class="desc">
           <p class="text-2xl font-bold mt-8">Description</p>
           <p class="mt-4 mb-16">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Magnam dolore perferendis quia! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit.
+           {{products?.description}}
           </p>
         </div>
       </div>
