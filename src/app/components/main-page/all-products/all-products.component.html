@@ -9,7 +9,7 @@
     <a  [routerLink]="['/single-product', product.id]" *ngFor="let product of products">
         <div class="product-item hover:scale-105 cursor-pointer ease-in-out duration-300 relative">
             <img
-              src="https://i.pinimg.com/564x/b9/e3/d3/b9e3d3c4afc2f5edd0b8988584502686.jpg"
+              [src]="product.image"
               alt=""
               width="600px"
               class="product-img max-h-[400px] object-cover"

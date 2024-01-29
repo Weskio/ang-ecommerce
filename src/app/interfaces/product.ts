@@ -7,4 +7,5 @@ export interface Product {
   price: number; // Change the type to number
   rating?: {}; // Optional property (add it if needed)
   category?: string;
+  quantity?: number;
 }
