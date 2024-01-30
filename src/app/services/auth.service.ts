@@ -9,7 +9,7 @@ import { Observable, catchError, of, tap, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'https://6ba4-197-159-140-9.ngrok-free.app/api';
+  private baseUrl = 'https://7cb1-197-159-140-9.ngrok-free.app/api';
   private tokenKey = 'userToken';
   private userKey = 'userData';
   authService: any;
@@ -34,7 +34,6 @@ export class AuthService {
   logout(): Observable<any> {
     const userToken = this.getUserToken();
 
-    // Ensure the user is authenticated before attempting to logout
     if (!userToken) {
       // If not authenticated, navigate to the login page without making a request
       this.router.navigate(['login']);

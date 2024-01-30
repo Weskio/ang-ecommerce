@@ -4,8 +4,8 @@ export interface Product {
   title: string;
   description: string;
   image?: string;
-  price: number; // Change the type to number
-  rating?: {}; // Optional property (add it if needed)
+  price: number; 
+  rating?: {};
   category?: string;
   quantity?: number;
   featured?:boolean

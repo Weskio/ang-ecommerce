@@ -23,12 +23,6 @@ export class RegisterComponent {
   }
   )
 
-  // registerForm = new FormGroup({
-  //   name: new FormControl('', Validators.required),
-  //   email: new FormControl('', Validators.required),
-  //   password: new FormControl('', Validators.required),
-  // });
-
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,

@@ -21,11 +21,6 @@ export class LoginComponent {
     password: ['', Validators.required],
   });
 
-  // loginForm = new FormGroup({
-  //   email: new FormControl('', Validators.required),
-  //   password: new FormControl('', Validators.required),
-  // });
-
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -45,12 +40,10 @@ export class LoginComponent {
       (response) => {
         const userName = response.user.name;
         const email = response.user.email;
-        console.log(response)
-
         this.router.navigate(['home']);
       },
       (error) => {
-        console.log("Error bitch")
+        console.log("Error")
       }
     );
   }

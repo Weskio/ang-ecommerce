@@ -27,12 +27,11 @@ export class SingleProductComponent {
   ) {}
 
   ngOnInit(): void {
-    const productId = Number(this.route.snapshot.params['id']);
-    this.product = this.productService.getProductsById(productId);
+    const PRODUCT_ID = Number(this.route.snapshot.params['id']);
+    this.product = this.productService.getProductsById(PRODUCT_ID);
   }
 
   addItem() {
-    // Increase quantity
     this.quantity++;
   }
 

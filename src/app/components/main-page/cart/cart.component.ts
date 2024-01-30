@@ -2,11 +2,12 @@ import {NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CartServiceService } from '../../../services/cart-service.service';
 import { Product } from '../../../interfaces/product';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor, RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
