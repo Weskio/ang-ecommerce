@@ -100,7 +100,7 @@
 
       <div class="basket lg:fixed w-full lg:top-0  lg:w-[32%] lg:h-full lg:right-0 bg-white z-40">
         <div class="head py-6 px-4 border-b flex">
-          <p class="text-lg font-bold">your basket</p>
+          <p class="text-lg font-[500]">your basket</p>
         </div>
       
         <div class="body p-4">
@@ -110,7 +110,7 @@
             <div class="basket-item flex scroll mb-5 "*ngFor="let item of items">
               <img [src]="item.image" alt="" class="w-32 h-32 object-cover">
               <div class="ml-4">
-                <p class="text-lg font-bold">{{ item.title }}</p>
+                <p class="text-lg font-[500]">{{ item.title }}</p>
                 <p class="text-2xl font-bold">{{ item.price }} €</p>
                 <p class="text-sm text-red-500 cursor-pointer" (click)="removeFromCart(item)">Delete</p>
               </div>
@@ -122,7 +122,7 @@
 
           <div class="foote bg-white  bottom-0 lg:absolute w-full border-t p-4 pr-12">
             <div class="w-full flex justify-between">
-              <p class="text-2xl font-bold">Total</p>
+              <p class="text-2xl font-medium">Total</p>
               <p class="text-3xl font-bold">{{total}} €</p>
             </div>
 

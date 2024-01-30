@@ -1,29 +1,15 @@
-.news-title {
-    font-family: "PT Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .demo-toggles {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .demo-toggles * {
-    margin-bottom: 16px;
-  }
-  
-  .demo-options {
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-  }
-  
-  .demo-data * {
-    margin: 16px 0;
-  }
-  
-  .demo-paginator {
-    width: 600px;
-  }
-  
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: black;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: black;
+  color: #fefefe;
+  cursor: default;
+}
