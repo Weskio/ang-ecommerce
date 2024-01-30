@@ -25,7 +25,7 @@
       <p
         class="text-center news-title mt-4 font-semibold text-4xl dark:text-white"
       >
-      Order your skincare essentials now!
+        Order your skincare essentials now!
       </p>
 
       <p class="mt-4 text-center">
@@ -35,7 +35,7 @@
       <button
         class="mt-8 w-full outline outline-[1px] rounded-sm outline-black p-3 mb-8 hover:bg-black hover:text-white"
       >
-      Place your order.
+        Place your order.
       </button>
     </div>
   </div>
@@ -61,11 +61,10 @@
   <div class="card-wrap p-4 lg:p-24">
     <div
       class="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
-      
     >
       <div
         class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
-        *ngFor = "let product of featuredProducts"
+        *ngFor="let product of featuredProducts"
       >
         <div class="service-content-wrapper">
           <img
@@ -73,7 +72,7 @@
             loading="lazy"
             width="474"
             alt=""
-            class="whatson-img w-full lg:lg:h-[60vh] object-cover"
+            class="whatson-img w-full h-[60vh] md:h-[55vh] lg:lg:h-[60vh] object-cover"
           />
 
           <a [routerLink]="['/single-product', product.id]">
@@ -95,17 +94,17 @@
               </svg>
             </div>
           </a>
-         
 
           <div
             class="overlay absolute top-auto px-6 p-4 z-10 flex bottom-0 bg-black bg-opacity-35 w-full"
           >
-            <h3 class="news-title text-2xl font-bold text-white">{{product.title}}</h3>
-            <p class="ml-auto text-white">${{product.price}}</p>
+            <h3 class="news-title text-2xl font-bold text-white">
+              {{ product.title }}
+            </h3>
+            <p class="ml-auto text-white">${{ product.price }}</p>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

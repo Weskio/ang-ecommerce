@@ -20,7 +20,6 @@ items: Product[] = [];
       this.items.splice(index, 1);
     }
   }
-  
 
   getItems(): Product[] {
     return this.items;
@@ -29,6 +28,14 @@ items: Product[] = [];
   getTotalPrice(): number {
     const totalPrice = this.items.reduce((acc, item) => acc + item.price, 0);
     return parseFloat(totalPrice.toFixed(2));
+  }
+
+  ngOnInit(){
+    
+  }
+
+  getTotalItemCount():number{
+    return this.items.length
   }
   
 }

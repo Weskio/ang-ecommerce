@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartComponent } from "../cart/cart.component";
 import { NgIf } from '@angular/common';
+import { CartServiceService } from '../../../services/cart-service.service';
 
 @Component({
     selector: 'app-header',
@@ -17,5 +18,19 @@ export class HeaderComponent {
   
   showCart() {
     this.isCartShown = !this.isCartShown;
+  }
+
+  totalItemCount: number = 0;
+
+  constructor(private cartService:CartServiceService, private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    this.updateTotalItemCount();
+  }
+
+  updateTotalItemCount(): void {
+    this.totalItemCount = this.cartService.getTotalItemCount();
+    // Trigger change detection explicitly
+    this.cdr.detectChanges();
   }
 }

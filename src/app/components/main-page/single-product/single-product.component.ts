@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { NgIf } from '@angular/common';
 import { CartComponent } from '../cart/cart.component';
@@ -15,6 +15,7 @@ import { CartServiceService } from '../../../services/cart-service.service';
   imports: [HeaderComponent, NgIf, CartComponent, RouterLink],
 })
 export class SingleProductComponent {
+  @Input() totalItemCount: number = 0;
   product?: Product;
   quantity: number = 1; // Initial quantity
   isCartShown?: boolean
@@ -54,4 +55,6 @@ export class SingleProductComponent {
   showCart() {
     this.isCartShown = !this.isCartShown;
   }
+
+  
 }
