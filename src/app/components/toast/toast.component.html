@@ -1,1 +1,89 @@
-<p>toast works!</p>
+<div
+  class="error-toast shadow-2xl shadow-red-400 w-72 lg:w-80 bg-red-100 rounded-lg absolute top-16 right-6 z-30"
+  *ngIf ="isDetailsInvalid"
+>
+  <svg
+    class="w-6 h-6 ml-auto text-gray-800 cursor-pointer dark:text-white"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    (click)="closeToast()"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
+      clip-rule="evenodd"
+    />
+  </svg>
+
+  <div class="main w-full ml-auto mr-auto p-6 pt-0">
+    <svg
+      class="w-16 h-16 ml-auto mr-auto text-red-600 dark:text-white divide-y-2"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm11-4a1 1 0 1 0-2 0v5a1 1 0 1 0 2 0V8Zm-1 7a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+
+    <p
+      class="text-red-500 text-center w-full border-t border-gray-300 pt-3 mt-3 ml-auto mr-auto mb-3"
+    >
+      Nooo! Something went wrong
+    </p>
+    <p class="text-gray-500 w-full text-center">
+      We're sorry that you have to experience some problems! Please try again
+    </p>
+  </div>
+</div>
+
+<div
+  class="success-toast shadow-2xl shadow-emerald-400 w-72 lg:w-80 bg-emerald-100 rounded-lg absolute top-16 right-6 z-30"
+  *ngIf ="isDetailsValid"
+>
+  <svg
+    class="w-6 h-6 ml-auto text-gray-800 cursor-pointer dark:text-white"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    (click)="closeToast()"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
+      clip-rule="evenodd"
+    />
+  </svg>
+
+  <div class="main w-full ml-auto mr-auto p-6 pt-0">
+    <svg
+      class="w-16 h-16 ml-auto mr-auto text-emerald-600 dark:text-white divide-y-2"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm5.5 1a.5.5 0 0 0-1 0 5 5 0 0 0 1.6 3.4 5.5 5.5 0 0 0 7.8 0 5 5 0 0 0 1.6-3.4.5.5 0 0 0-1 0h-.2l-1 .3a18.9 18.9 0 0 1-7.8-.4ZM9 8a1 1 0 0 0 0 2 1 1 0 1 0 0-2Zm6 0a1 1 0 1 0 0 2 1 1 0 1 0 0-2Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+
+    <p
+      class="text-emerald-500 text-center w-full border-t border-gray-300 pt-3 mt-3 ml-auto mr-auto mb-3"
+    >
+      Nooo! Something went wrong
+    </p>
+    <p class="text-gray-500 w-full text-center">
+      We're sorry that you have to experience some problems! Please try again
+    </p>
+  </div>
+</div>

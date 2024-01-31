@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 //import { MessageService } from 'primeng/api';
@@ -6,13 +6,14 @@ import { User } from '../../interfaces/auth';
 import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from "../main-page/header/header.component";
+import { ToastComponent } from "../toast/toast.component";
 
 @Component({
     selector: 'app-login',
     standalone: true,
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent]
+    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent, ToastComponent]
 })
 export class LoginComponent {
 
@@ -20,6 +21,8 @@ export class LoginComponent {
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
   });
+isDetailsInvalid: boolean = false
+isDetailsValid: boolean = false
 
   constructor(
     private fb: FormBuilder,
@@ -41,9 +44,11 @@ export class LoginComponent {
         const userName = response.user.name;
         const email = response.user.email;
         this.router.navigate(['home']);
+      this.isDetailsValid=true
       },
       (error) => {
         console.log("Error")
+        this.isDetailsInvalid = true
       }
     );
   }

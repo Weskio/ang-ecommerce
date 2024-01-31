@@ -1,4 +1,7 @@
 <app-header [showCartButton]="false" class="absolute z-10 bg-black bg-opacity-20 top-0 w-full"/>
+
+<app-toast [isDetailsInvalid]="isDetailsInvalid" [isDetailsValid]="isDetailsValid"></app-toast>
+
     <section class="page-wrapper wf-section relative">
       <div class="w-layout-grid grid_1-2">
         <div id="w-node-b994db6f-7fb4-032d-dad5-adb9c36920d2-447d2457">
@@ -21,17 +24,15 @@
             <form
             id="email-form"
             name="email-form"
-            data-name="Email Form"
-            method="get"
             data-ms-form="login"
-            class="form"
+            class=""
             aria-label="Email Form"
             [formGroup]="registerForm"
             (ngSubmit)="submitDetails()"
           >
             <input
               type="text"
-              class="text-field w-input"
+              class="w-full mb-5 focus:ring-0 focus:outline-none focus:border-purple-600"
               maxlength="256"
               formControlName="name"
               placeholder="Your name"
@@ -41,7 +42,7 @@
           
             <input
               type="email"
-              class="text-field w-input"
+              class="w-full mb-5 focus:ring-0 focus:outline-none focus:border-purple-600"
               maxlength="256"
               formControlName="email"
               placeholder="Your e-mail"
@@ -51,7 +52,7 @@
           
             <input
               type="password"
-              class="text-field password w-input"
+              class="w-full mb-5 focus:ring-0 focus:outline-none focus:border-purple-600"
               maxlength="256"
               formControlName="password"
               placeholder="Password"
@@ -66,7 +67,7 @@
               <button
                 [disabled]="registerForm.invalid"
                 type="submit"
-                class="bg-blue-600 p-2 rounded-lg hover:bg-blue-800 text-white font-semibold disabled:opacity-30"
+                class="bg-blue-600 p-2 rounded-lg hover:bg-blue-800 text-white disabled:opacity-30"
               >
                 Sign Up
               </button>

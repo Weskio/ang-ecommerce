@@ -6,6 +6,7 @@ import { User } from '../../interfaces/auth';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from "../main-page/header/header.component";
+import { ToastComponent } from "../toast/toast.component";
 //import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 
 @Component({
@@ -13,9 +14,12 @@ import { HeaderComponent } from "../main-page/header/header.component";
     standalone: true,
     templateUrl: './register.component.html',
     styleUrl: './register.component.css',
-    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent]
+    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent, ToastComponent]
 })
 export class RegisterComponent {
+  isDetailsInvalid: boolean = false
+  isDetailsValid: boolean = false
+
   registerForm = this.fb.group({
     name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
     email: ['', [Validators.required, Validators.email]],
@@ -47,9 +51,11 @@ export class RegisterComponent {
     this.authService.registerUser(postData as User).subscribe(
       response => {
          this.router.navigate(['login'])
+         this.isDetailsValid = true
       },
       error => {
       console.log('error') 
+      this.isDetailsInvalid = true
       }
     )
   }
