@@ -9,7 +9,7 @@ import { Observable, catchError, of, tap, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'https://7cb1-197-159-140-9.ngrok-free.app/api';
+  private baseUrl = 'https://07bd-197-159-140-9.ngrok-free.app/api';
   private tokenKey = 'userToken';
   private userKey = 'userData';
   authService: any;
