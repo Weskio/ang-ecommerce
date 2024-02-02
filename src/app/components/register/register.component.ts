@@ -7,7 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from "../main-page/header/header.component";
 import { ToastComponent } from "../toast/toast.component";
-import { NgIf } from '@angular/common';
+import Swal from 'sweetalert2';
 //import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 
 @Component({
@@ -55,6 +55,13 @@ export class RegisterComponent {
       response => {
          this.router.navigate(['login'])
          this.isDetailsValid = true
+         Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          text: `Registration successful`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
       },
       error => {
       console.log('error') 

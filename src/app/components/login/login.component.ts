@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from "../main-page/header/header.component";
 import { ToastComponent } from "../toast/toast.component";
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-login',
@@ -38,6 +39,8 @@ isSubmitButtonClicked: boolean =false
     return this.loginForm.controls['password'];
   }
 
+  
+
   loginUser() {
     this.isSubmitButtonClicked = true
     const { email, password } = this.loginForm.value;
@@ -47,6 +50,13 @@ isSubmitButtonClicked: boolean =false
         const email = response.user.email;
         this.router.navigate(['home']);
       this.isDetailsValid=true
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        text: `Login Succesful.`,
+        showConfirmButton: false,
+        timer: 3000,
+      });
       },
       (error) => {
         console.log("Error")
@@ -54,4 +64,6 @@ isSubmitButtonClicked: boolean =false
       }
     );
   }
+
+ 
 }
