@@ -23,6 +23,7 @@ export class LoginComponent {
   });
 isDetailsInvalid: boolean = false
 isDetailsValid: boolean = false
+isSubmitButtonClicked: boolean =false
 
   constructor(
     private fb: FormBuilder,
@@ -38,6 +39,7 @@ isDetailsValid: boolean = false
   }
 
   loginUser() {
+    this.isSubmitButtonClicked = true
     const { email, password } = this.loginForm.value;
     this.authService.loginUser({ email, password } as User).subscribe(
       (response) => {

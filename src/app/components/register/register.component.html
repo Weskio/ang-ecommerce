@@ -39,6 +39,9 @@
               id="name-2"
               data-ms-member="name"
             />
+
+            
+            
           
             <input
               type="email"
@@ -64,13 +67,29 @@
               <div class="links">
                 <a href="/login" class="link">Login</a>
               </div>
-              <button
+              
+
+              @if(isSubmitButtonClicked){
+                <div class="loader w-24">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              }
+
+              @else {
+                <button
                 [disabled]="registerForm.invalid"
                 type="submit"
                 class="bg-blue-600 p-2 rounded-lg hover:bg-blue-800 text-white disabled:opacity-30"
               >
                 Sign Up
               </button>
+              }
+             
+              
             </div>
           </form>
           

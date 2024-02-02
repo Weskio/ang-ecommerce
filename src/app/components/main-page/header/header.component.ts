@@ -3,6 +3,7 @@ import { CartComponent } from "../cart/cart.component";
 import { NgIf } from '@angular/common';
 import { CartServiceService } from '../../../services/cart-service.service';
 import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -25,7 +26,7 @@ export class HeaderComponent {
 
   totalItemCount: number = 0;
 
-  constructor(private cartService:CartServiceService, private cdr: ChangeDetectorRef, private authService: AuthService) {}
+  constructor(private cartService:CartServiceService, private cdr: ChangeDetectorRef, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.updateTotalItemCount();
@@ -34,6 +35,21 @@ export class HeaderComponent {
       this.userName = userData.name;
       this.email = userData.email
     }
+  }
+
+  logout() {
+    console.log('Logged out')
+    this.authService.logout().subscribe(
+      () => {
+        // Successful logout, navigate to the login page
+        this.router.navigate(['login']);
+      },
+      (error: any) => {
+        console.error('Logout error:', error);
+        // Navigate to the login page even if there's an error
+        this.router.navigate(['login']);
+      }
+    );
   }
 
   updateTotalItemCount(): void {

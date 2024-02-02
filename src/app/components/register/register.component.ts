@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from "../main-page/header/header.component";
 import { ToastComponent } from "../toast/toast.component";
+import { NgIf } from '@angular/common';
 //import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 
 @Component({
@@ -19,6 +20,7 @@ import { ToastComponent } from "../toast/toast.component";
 export class RegisterComponent {
   isDetailsInvalid: boolean = false
   isDetailsValid: boolean = false
+  isSubmitButtonClicked: boolean =false
 
   registerForm = this.fb.group({
     name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+(?: [a-zA-Z]+)*$/)]],
@@ -47,6 +49,7 @@ export class RegisterComponent {
 
 
   submitDetails() {
+    this.isSubmitButtonClicked = true
     const postData = { ...this.registerForm.value };
     this.authService.registerUser(postData as User).subscribe(
       response => {
