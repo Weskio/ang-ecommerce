@@ -13,7 +13,7 @@ import { ToastComponent } from "../toast/toast.component";
     standalone: true,
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent, ToastComponent]
+    imports: [ReactiveFormsModule, HttpClientModule, HeaderComponent, ToastComponent,]
 })
 export class LoginComponent {
 
