@@ -1,21 +1,25 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { User } from '../interfaces/auth';
 import { Observable, catchError, of, tap, throwError } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'https://6b63-197-159-140-9.ngrok-free.app/api';
+  private baseUrl = 'https://5c57-197-159-140-9.ngrok-free.app/api';
   private tokenKey = 'userToken';
   private userKey = 'userData';
   authService: any;
   router: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
+
+  // Check if running in browser environment
+  private isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
+  }
 
   registerUser(userDetails: User) {
     return this.http.post(`${this.baseUrl}/save/user`, userDetails);
@@ -59,7 +63,6 @@ export class AuthService {
       })
     );
   }
-  
 
   getUserToken(): string | null {
     return sessionStorage.getItem(this.tokenKey);

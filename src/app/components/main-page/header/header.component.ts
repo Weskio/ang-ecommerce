@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angu
 import { CartComponent } from "../cart/cart.component";
 import { NgIf } from '@angular/common';
 import { CartServiceService } from '../../../services/cart-service.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
     selector: 'app-header',
@@ -15,6 +16,8 @@ export class HeaderComponent {
   @Input() showCartButton: boolean = true;
 
   isCartShown = false;
+  userName: string | undefined;
+  email :string |undefined;
   
   showCart() {
     this.isCartShown = !this.isCartShown;
@@ -22,10 +25,15 @@ export class HeaderComponent {
 
   totalItemCount: number = 0;
 
-  constructor(private cartService:CartServiceService, private cdr: ChangeDetectorRef) {}
+  constructor(private cartService:CartServiceService, private cdr: ChangeDetectorRef, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.updateTotalItemCount();
+    const userData = this.authService.getUserData();
+    if (userData) {
+      this.userName = userData.name;
+      this.email = userData.email
+    }
   }
 
   updateTotalItemCount(): void {

@@ -5,18 +5,18 @@ import { AuthService } from '../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class SignInGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {
     const userToken = this.authService.getUserToken();
 
-    if (userToken) {
+    if (!userToken) {
       // User is authenticated
       return true;
     } else {
       // User is not authenticated, navigate to the login page
-      this.router.navigate(['login']);
+      this.router.navigate(['']);
       return false;
     }
   }
