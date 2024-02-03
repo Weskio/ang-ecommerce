@@ -1,7 +1,7 @@
 <div class="relative">
   <app-header class="absolute top-0 w-full bg-white bg-opacity-30" />
 
- <app-cart *ngIf="isCartShown" (closeCart)="isCartShown = false" />
+ <app-cart *ngIf="isCartShown" (closeCart)="isCartShown = false" [quantity]="quantity"  />
 
   <div class="hero lg:flex h-[100vh] w-full">
     <img

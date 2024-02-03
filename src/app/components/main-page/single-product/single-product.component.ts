@@ -17,7 +17,7 @@ import { CartServiceService } from '../../../services/cart-service.service';
 export class SingleProductComponent {
   @Input() totalItemCount: number = 0;
   product?: Product;
-  quantity: number = 1; // Initial quantity
+  quantity: number = 1; 
   isCartShown?: boolean
 
   constructor(
@@ -44,11 +44,10 @@ export class SingleProductComponent {
     // Add product with selected quantity to cart
     if (this.product) {
       for (let i = 0; i < this.quantity; i++) {
-        this.cartService.addToCart(this.product);
+        this.cartService.addToCart(this.product, this.quantity);
       }
     }
 
-    this.quantity=0
   }
 
   showCart() {

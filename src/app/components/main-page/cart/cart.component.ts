@@ -1,5 +1,5 @@
 import {NgFor, NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartServiceService } from '../../../services/cart-service.service';
 import { Product } from '../../../interfaces/product';
 import { RouterLink } from '@angular/router';
@@ -12,8 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-
-  quantity:number =0;
+  @Input() quantity: number = 1;
   @Output() closeCart: EventEmitter<void> = new EventEmitter<void>();
   isCartShown = false;
   items: Product[] = [];
@@ -37,8 +36,8 @@ export class CartComponent {
 
   removeFromCart(product: Product) {
     this.cartService.removeFromCart(product);
-    this.items = this.cartService.getItems(); // Update items after removal
-    this.total = this.cartService.getTotalPrice(); // Update total after removal
+    this.items = this.cartService.getItems();
+    this.total = this.cartService.getTotalPrice();
   }
 
   
