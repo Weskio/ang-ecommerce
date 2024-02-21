@@ -6,16 +6,14 @@ import { DashFrameworkComponent } from '../dash-framework/dash-framework.compone
 import { ModalsComponent } from '../modals/modals.component';
 import { Product } from '../../../interfaces/product';
 import { ProductService } from '../../../services/product.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgClass } from '@angular/common';
 import {
   FormsModule,
-  NgModel,
   FormGroup,
   FormBuilder,
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { title } from 'process';
 //import { ProductCommunicationService } from '../../../services/product-communication.service';
 
 @Component({
@@ -30,12 +28,14 @@ import { title } from 'process';
     FormsModule,
     ReactiveFormsModule,
     NgIf,
+    NgClass
   ],
 })
 export class HomeComponent{
   userName: string | undefined;
   email: string | undefined;
   productCommunicationService: any;
+  isModalClicked: boolean = false
   
   imageUrl: any;
   // addForm: any= {
@@ -67,25 +67,6 @@ export class HomeComponent{
   });
   
   myProducts: Product[] = this.product.getProducts();
-  
-  onImageChange(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.addForm.patchValue({ imageFile: file });
-    }
-  }
-  
-  getImagePreview(file: File): string {
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.addForm.patchValue({ image: reader.result });
-      };
-      return this.addForm.get('image')?.value;
-    }
-    return ''; // or a default URL for no image
-  }
 
   onSelectedFile(e: any) {
     if (e.target.files) {
@@ -99,7 +80,7 @@ export class HomeComponent{
   
   addProduct() {
     const newProduct: Product = this.addForm.value;
-    this.myProducts.push(newProduct);
+    this.product.addProduct(newProduct);
     this.addForm.reset();
   }
   
@@ -107,12 +88,10 @@ export class HomeComponent{
   logout() {
     this.authService.logout().subscribe(
       () => {
-        // Successful logout, navigate to the login page
         this.router.navigate(['login']);
       },
       (error: any) => {
         console.error('Logout error:', error);
-        // Navigate to the login page even if there's an error
         this.router.navigate(['login']);
       }
     );
@@ -124,10 +103,9 @@ export class HomeComponent{
       this.userName = userData.name;
       this.email = userData.email;
     }
+  }
 
-    //   this.productCommunicationService.productAdded.subscribe((newProduct: Product) => {
-    //     this.myProducts.push(newProduct);
-
-    // });
+  modalToggle(){
+    this.isModalClicked = !this.isModalClicked
   }
 }

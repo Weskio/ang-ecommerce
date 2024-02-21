@@ -1,6 +1,7 @@
-<app-dash-framework />
+ <div [ngClass]="{'bg-black absolute w-full bg-opacity-40 h-full z-10':isModalClicked}"></div>
+  <!-- <app-dash-framework />
 
-<app-modals />
+<app-modals /> -->
 
 <div
   id="add-modal"
@@ -59,10 +60,11 @@
             />
 
             <img
-              *ngIf="addForm.get('imageFile')?.value"
-              [src]="getImagePreview(addForm.get('imageFile')?.value)"
+              *ngIf="imageUrl"
+              [src]="imageUrl"
               class="h-80 w-72 object-cover rounded-xl"
               width="180px"
+              (change) ="onSelectedFile($event)"
               height="180px"
             />
             <label
@@ -174,9 +176,10 @@
     >
       <img
         [src]="
-          product.imageFile ? getImagePreview(product.imageFile) : product.image
+          product.imageFile ? imageUrl : product.image
         "
         class="h-80 w-72 object-cover rounded-xl"
+        (change) ="onSelectedFile($event)"
         width="180px"
         height="180px"
       />
@@ -222,3 +225,5 @@
     </div>
   </div>
 </div>
+
+

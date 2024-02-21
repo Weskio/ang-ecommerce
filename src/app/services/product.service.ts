@@ -299,5 +299,18 @@ export class ProductService {
     return this.products.filter((item) => item.featured===true)
   }
 
+  addProduct(product: Product) {
+    this.products.push(product);
+  }
+
+  deleteProduct(id: number) {
+    this.products = this.products.filter((product) => product.id !== id);
+  }
+
+  editProduct(product: Product) {
+    const index = this.products.findIndex((p) => p.id === product.id);
+    this.products[index] = product;
+  }
+
   constructor() {}
 }

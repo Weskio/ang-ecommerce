@@ -14,7 +14,10 @@ export const routes: Routes = [
   { path: 'single-product/:id', component: SingleProductComponent },
   { path: 'all-products', component: AllProductsComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'login', component: LoginComponent, canActivate:[SignInGuard]},
-  { path: 'signup', component: RegisterComponent, canActivate:[SignInGuard] },
+  // { path: 'login', component: LoginComponent, canActivate:[SignInGuard]},
+  // { path: 'signup', component: RegisterComponent, canActivate:[SignInGuard] },
+  // { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent},
+  { path: 'signup', component: RegisterComponent},
   { path: 'home', component: HomeComponent },
 ];
