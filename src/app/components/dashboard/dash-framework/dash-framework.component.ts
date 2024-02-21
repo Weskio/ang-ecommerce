@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
-import { initFlowbite } from 'flowbite';
+
 
 @Component({
   selector: 'app-dash-framework',
@@ -37,11 +37,6 @@ export class DashFrameworkComponent {
       this.userName = userData.name;
       this.email = userData.email
     }
-  }
-
-  ngAfterViewInit(): void {
-    // Initialize Flowbite after the view has been initialized
-    initFlowbite();
   }
 
 }
