@@ -28,6 +28,11 @@ export class ModalsComponent {
   //   // Initialization logic if needed
   // }
 
+  ngAfterViewInit(): void {
+    // Initialize Flowbite after the view has been initialized
+    initFlowbite();
+  }
+
   // addProduct(newProduct: Product) {
   //   this.productAdded.emit(newProduct);
   //   this.productCommunicationService.addProduct(newProduct);

@@ -32,7 +32,7 @@ import { title } from 'process';
     NgIf,
   ],
 })
-export class HomeComponent {
+export class HomeComponent{
   userName: string | undefined;
   email: string | undefined;
   productCommunicationService: any;
@@ -52,6 +52,11 @@ export class HomeComponent {
     private product: ProductService,
     private fb: FormBuilder
   ) {}
+
+  ngAfterViewInit(): void {
+    // Initialize Flowbite after the view has been initialized
+    initFlowbite();
+  }
 
   addForm: FormGroup = this.fb.group({
     title: ['', Validators.required],
@@ -114,7 +119,6 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    initFlowbite();
     const userData = this.authService.getUserData();
     if (userData) {
       this.userName = userData.name;

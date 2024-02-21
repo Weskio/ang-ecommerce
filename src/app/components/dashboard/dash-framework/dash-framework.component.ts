@@ -32,12 +32,16 @@ export class DashFrameworkComponent {
   }
 
   ngOnInit(): void {
-    initFlowbite();
     const userData = this.authService.getUserData();
     if (userData) {
       this.userName = userData.name;
       this.email = userData.email
     }
+  }
+
+  ngAfterViewInit(): void {
+    // Initialize Flowbite after the view has been initialized
+    initFlowbite();
   }
 
 }

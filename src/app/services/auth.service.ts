@@ -15,8 +15,6 @@ export class AuthService {
   router: any;
 
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
-
-  // Check if running in browser environment
   private isBrowser(): boolean {
     return isPlatformBrowser(this.platformId);
   }
@@ -28,7 +26,6 @@ export class AuthService {
   loginUser(userDetails: User): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, userDetails).pipe(
       tap((response: any) => {
-        // Store the token and user data in sessionStorage
         sessionStorage.setItem(this.tokenKey, response.token);
         sessionStorage.setItem(this.userKey, JSON.stringify(response.user));
       })
@@ -39,7 +36,6 @@ export class AuthService {
     const userToken = this.getUserToken();
 
     if (!userToken) {
-      // If not authenticated, navigate to the login page without making a request
       this.router.navigate(['login']);
       return of(null);
     }
@@ -48,14 +44,12 @@ export class AuthService {
 
     return this.http.post(`${this.baseUrl}/logout`, {}, { headers }).pipe(
       tap(() => {
-        // Clear the token and user data from sessionStorage
         sessionStorage.removeItem(this.tokenKey);
         sessionStorage.removeItem(this.userKey);
         console.log('Logout successful');
       }),
       catchError((error: any) => {
         console.error('Logout error:', error);
-        // Even if there's an error, clear the session storage and navigate to the login page
         sessionStorage.removeItem(this.tokenKey);
         sessionStorage.removeItem(this.userKey);
         this.router.navigate(['login']);
@@ -69,6 +63,9 @@ export class AuthService {
   }
 
   getUserData(): User | null {
+    if (!this.isBrowser()) {
+      return null;
+    }
     const userDataString = sessionStorage.getItem(this.userKey);
     return userDataString ? JSON.parse(userDataString) : null;
   }
