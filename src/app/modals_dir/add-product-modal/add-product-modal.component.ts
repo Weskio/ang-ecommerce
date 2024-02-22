@@ -44,6 +44,7 @@ export class AddProductModalComponent {
   addProduct() {
     const newProduct: Product = this.addProductForm.value
     newProduct.image = this.imageUrl
+    newProduct.id =  Math.floor(Math.random()) 
    this.productService.addProduct(newProduct);
    Swal.fire({
    // position: 'top-end',

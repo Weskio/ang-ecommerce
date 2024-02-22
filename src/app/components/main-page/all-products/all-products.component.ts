@@ -23,8 +23,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class AllProductsComponent {
   p: number = 1;
 
+  products: Product[] = []
+
   constructor(private productService: ProductService) {}
 
-  products: Product[] = this.productService.getProducts();
+  ngOnInit(){
+    this.products = this.productService.getProducts();
+  }
+
+  
 
 }

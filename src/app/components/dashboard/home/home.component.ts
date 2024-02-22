@@ -39,14 +39,22 @@ export class HomeComponent{
   isModalClicked: boolean = false
   imageUrl: any;
   myProducts: Product[] =[]
-addProduct!: boolean;
-deleteProduct!: boolean;
+  addProduct!: boolean;
+  deleteProduct!: boolean;
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private product: ProductService,
   ) {}
+
+  productId: number = 0
+
+  deleteProductModal(productId: number) {
+    this.productId = productId; // Set the productId property
+    this.deleteProduct = true; // Open the delete product modal
+  }
+  
   
 
   logout() {
@@ -69,13 +77,19 @@ deleteProduct!: boolean;
     }
     
     this.myProducts = this.product.getProducts();
+    
+    this.myProducts.forEach(item => {
+      this.productId = item.id 
+      return this.productId
+    })
   }
 
-  modalToggle(modalType: string) {
+  modalToggle(modalType: string, productId: number) {
     if (modalType === 'addProduct') {
       this.addProduct = !this.addProduct;
     } else if (modalType === 'deleteProduct') {
       this.deleteProduct = !this.deleteProduct;
+     this.productId = productId;
     }
   }
   
