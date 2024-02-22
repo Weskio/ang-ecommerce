@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-delete-product-modal',
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './delete-product-modal.component.css'
 })
 export class DeleteProductModalComponent {
+  @Input() isModalOpened: boolean = false
+  @Output() closeModalEvent = new EventEmitter()
+  closeModal(){
+    this.isModalOpened = false
+    this.closeModalEvent.emit()
+    }
 
 }

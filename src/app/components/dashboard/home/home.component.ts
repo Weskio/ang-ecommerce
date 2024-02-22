@@ -13,6 +13,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { AddProductModalComponent } from "../../../modals_dir/add-product-modal/add-product-modal.component";
+import { DeleteProductModalComponent } from "../../../modals_dir/delete-product-modal/delete-product-modal.component";
 //import { ProductCommunicationService } from '../../../services/product-communication.service';
 
 @Component({
@@ -27,7 +28,8 @@ import { AddProductModalComponent } from "../../../modals_dir/add-product-modal/
         ReactiveFormsModule,
         NgIf,
         NgClass,
-        AddProductModalComponent
+        AddProductModalComponent,
+        DeleteProductModalComponent
     ]
 })
 export class HomeComponent{
@@ -37,26 +39,14 @@ export class HomeComponent{
   isModalClicked: boolean = false
   imageUrl: any;
   myProducts: Product[] =[]
+addProduct!: boolean;
+deleteProduct!: boolean;
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private product: ProductService,
   ) {}
-
-
-  // addForm: FormGroup = this.fb.group({
-  //   title: ['', Validators.required],
-  //   description: [''],
-  //   imageFile: [null],
-  //   price: [0, Validators.required],
-  //   category: ['', Validators.required],
-  // });
-  // addProduct() {
-  //   const newProduct: Product = this.addForm.value;
-  //   this.product.addProduct(newProduct);
-  //   this.addForm.reset();
-  // }
   
 
   logout() {
@@ -81,7 +71,12 @@ export class HomeComponent{
     this.myProducts = this.product.getProducts();
   }
 
-  modalToggle(){
-    this.isModalClicked = !this.isModalClicked
+  modalToggle(modalType: string) {
+    if (modalType === 'addProduct') {
+      this.addProduct = !this.addProduct;
+    } else if (modalType === 'deleteProduct') {
+      this.deleteProduct = !this.deleteProduct;
+    }
   }
+  
 }
