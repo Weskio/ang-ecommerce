@@ -28,6 +28,7 @@ export class AllProductsComponent {
   constructor(private productService: ProductService) {}
 
   ngOnInit(){
+    this.productService.ngOnInit()
     this.products = this.productService.getProducts();
   }
 

@@ -5,8 +5,11 @@ export interface Product {
   description: string;
   image?: string;
   price: number; 
-  rating?: {};
-  category?: string;
+  rating?: {
+    rate: number;
+    count: number
+  };
+  category: string;
   quantity?: number;
   featured?:boolean
 }
