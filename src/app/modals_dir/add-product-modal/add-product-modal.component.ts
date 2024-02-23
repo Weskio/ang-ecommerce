@@ -46,6 +46,7 @@ export class AddProductModalComponent {
     newProduct.image = this.imageUrl
     newProduct.id = this.productService.getNextProductId()
    this.productService.addProduct(newProduct);
+   this.productService.ngOnInit()
    Swal.fire({
    // position: 'top-end',
     icon: 'success',

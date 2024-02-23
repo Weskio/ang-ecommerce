@@ -70,7 +70,7 @@ export class HomeComponent{
   }
 
   ngOnInit(): void {
-    console.log(this.product.ngOnInit())
+    this.product.ngOnInit()
     const userData = this.authService.getUserData();
     if (userData) {
       this.userName = userData.name;
@@ -78,7 +78,7 @@ export class HomeComponent{
     }
     
     this.myProducts = this.product.getProducts();
-    console.log(this.myProducts)
+    //console.log(this.myProducts)
     
     this.myProducts.forEach(item => {
       this.productId = item.id 

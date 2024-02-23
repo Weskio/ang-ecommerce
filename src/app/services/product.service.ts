@@ -352,21 +352,22 @@ export class ProductService {
 
   ngOnInit() {
     localStorage.setItem('localProducts', JSON.stringify(this.localProducts));
-    // localStorage.setItem('localProducts', JSON.stringify(this.localProducts));
 
     const storedProducts = localStorage.getItem('localProducts');
     const Products = localStorage.getItem('Products');
 
-    if (storedProducts && Products !== null) {
+    if(storedProducts && Products !== null ){
       this.initialProducts = JSON.parse(storedProducts);
       this.customProducts = JSON.parse(Products);
-      this.products = this.initialProducts.concat(this.customProducts);
-
-      console.log(this.initialProducts);
-      console.log(this.customProducts);
-    } else {
-      console.error('No products found in localStorage.');
+      this.products = this.initialProducts.concat(this.customProducts)
     }
+    else if(this.customProducts.length === 0 && storedProducts !==null){
+      this.initialProducts = JSON.parse(storedProducts);
+       this.products = this.initialProducts
+    }
+   else {
+        console.error('No products found in localStorage.');
+       }
   }
 
   getProducts() {
@@ -380,30 +381,41 @@ export class ProductService {
   getFeaturedProducts() {
     return this.products.filter((item) => item.featured === true);
   }
-
-  ngAfterViewOnInit() {}
+  
   addProduct(product: Product) {
     product.id = this.getNextProductId();
-    // this.localProducts.push(product);
-    // this.products.push(product);
-    localStorage.setItem('Products', JSON.stringify(product));
+    this.customProducts.push(product);
+    localStorage.setItem('Products', JSON.stringify(this.customProducts));
     console.log(product);
   }
 
   getNextProductId(): number {
-    if (!this.localProducts || this.localProducts.length === 0) {
+    if (!this.products || this.products.length === 0) {
       return 1;
     } else {
-      return this.localProducts[this.localProducts.length - 1].id + 1;
+      return this.products[this.products.length - 1].id + 1;
     }
   }
 
   deleteProduct(id: number) {
     const index = this.products.findIndex((p) => p.id === id);
     if (index !== -1) {
+      // Remove the product from this.products array
       this.products.splice(index, 1);
+      if (index < this.initialProducts.length) {
+        // Product is from initialProducts
+        this.initialProducts.splice(index, 1);
+      } else {
+        // Product is from customProducts
+        const customIndex = index - this.initialProducts.length;
+        this.customProducts.splice(customIndex, 1);
+      }
     }
+
+    localStorage.setItem('localProducts', JSON.stringify(this.products));
+      localStorage.setItem('Products', JSON.stringify(this.customProducts));
   }
+  
 
   editProduct(product: Product) {
     const index = this.products.findIndex((p) => p.id === product.id);

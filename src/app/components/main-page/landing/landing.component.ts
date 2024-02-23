@@ -23,7 +23,7 @@ export class LandingComponent {
 
   products = inject(ProductService);
 
-  featuredProducts: Product[] = this.products.getFeaturedProducts()
+  featuredProducts: Product[] = []
 
   totalItemCount: number = 0;
 
@@ -31,6 +31,9 @@ export class LandingComponent {
 
   ngOnInit(): void {
     this.updateTotalItemCount();
+    this.products.ngOnInit();
+
+    this.featuredProducts = this.products.getFeaturedProducts()
   }
 
   updateTotalItemCount(): void {
