@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 import { AddProductModalComponent } from "../../../modals_dir/add-product-modal/add-product-modal.component";
 import { DeleteProductModalComponent } from "../../../modals_dir/delete-product-modal/delete-product-modal.component";
+import { EditProductModalComponent } from "../../../modals_dir/edit-product-modal/edit-product-modal.component";
 //import { ProductCommunicationService } from '../../../services/product-communication.service';
 
 @Component({
@@ -29,7 +30,8 @@ import { DeleteProductModalComponent } from "../../../modals_dir/delete-product-
         NgIf,
         NgClass,
         AddProductModalComponent,
-        DeleteProductModalComponent
+        DeleteProductModalComponent,
+        EditProductModalComponent
     ]
 })
 export class HomeComponent{
@@ -41,11 +43,13 @@ export class HomeComponent{
   myProducts: Product[] =[]
   addProduct!: boolean;
   deleteProduct!: boolean;
+  editProduct!: boolean;
+  product!: Product
 
   constructor(
     private router: Router,
     private authService: AuthService,
-    private product: ProductService,
+    private productService: ProductService,
   ) {}
 
   productId: number = 0
@@ -70,29 +74,41 @@ export class HomeComponent{
   }
 
   ngOnInit(): void {
-    this.product.ngOnInit()
+    this.productService.ngOnInit()
     const userData = this.authService.getUserData();
     if (userData) {
       this.userName = userData.name;
       this.email = userData.email;
     }
     
-    this.myProducts = this.product.getProducts();
+    this.myProducts = this.productService.getProducts();
     //console.log(this.myProducts)
     
-    this.myProducts.forEach(item => {
-      this.productId = item.id 
-      return this.productId
-    })
+    // this.myProducts.forEach(item => {
+    //   this.productId = item.id 
+    //   return this.productId
+    // })
+
+    this.myProducts = this.productService.getProducts();
+    if (this.myProducts.length > 0) {
+        this.productId = this.myProducts[this.myProducts.length - 1].id;
+    }
 
   }
 
-  modalToggle(modalType: string, productId: number) {
+  modalToggle(modalType: string, productId: number, Product: Product) {
     if (modalType === 'addProduct') {
       this.addProduct = !this.addProduct;
     } else if (modalType === 'deleteProduct') {
       this.deleteProduct = !this.deleteProduct;
      this.productId = productId;
+     //console.log(productId)
+    }
+    else if(modalType === 'editProduct'){
+      this.editProduct = !this.editProduct;
+      this.product = Product
+      this.productId = productId
+      //console.log(Product)
     }
   }
   

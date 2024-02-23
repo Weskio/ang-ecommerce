@@ -400,13 +400,10 @@ export class ProductService {
   deleteProduct(id: number) {
     const index = this.products.findIndex((p) => p.id === id);
     if (index !== -1) {
-      // Remove the product from this.products array
       this.products.splice(index, 1);
       if (index < this.initialProducts.length) {
-        // Product is from initialProducts
         this.initialProducts.splice(index, 1);
       } else {
-        // Product is from customProducts
         const customIndex = index - this.initialProducts.length;
         this.customProducts.splice(customIndex, 1);
       }
@@ -417,10 +414,39 @@ export class ProductService {
   }
   
 
-  editProduct(product: Product) {
+  editProduct(product: Product, id: number) {
+    //console.log(product)
+    // console.log(product.title)
+    product.id = id;
+    console.log(product.id)
     const index = this.products.findIndex((p) => p.id === product.id);
-    this.products[index] = product;
+  //  console.log(index)
+   // console.log(product.title)
+    if (index !== -1) {
+      console.log(product.title)
+      if (index < this.initialProducts.length) {
+        //console.log(product)
+        this.initialProducts[index].title = product.title;
+        this.initialProducts[index].price = product.price;
+        this.initialProducts[index].description = product.description;
+        this.initialProducts[index].category = product.category;
+      } else {
+        //console.log(product)
+        const customIndex = index - this.initialProducts.length;
+        this.customProducts[customIndex].title = product.title;
+        this.customProducts[customIndex].price = product.price;
+        this.customProducts[customIndex].description = product.description;
+        this.customProducts[customIndex].category = product.category;
+      }
+
+      localStorage.setItem('localProducts', JSON.stringify(this.products));
+      localStorage.setItem('Products', JSON.stringify(this.customProducts));
+    }
+    else{
+      console.error('Product not found.')
+    }
   }
+  
 
   constructor() {}
 }

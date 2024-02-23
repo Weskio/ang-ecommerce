@@ -1,7 +1,8 @@
 <app-dash-framework />
 
-<app-add-product-modal *ngIf="addProduct" [isModalOpened]="addProduct" (closeModalEvent)="modalToggle('addProduct', productId)" />
-<app-delete-product-modal *ngIf="deleteProduct" [isModalOpened]="deleteProduct" [productId]="productId" (closeModalEvent)="modalToggle('deleteProduct', productId)" />
+<app-add-product-modal *ngIf="addProduct" [isModalOpened]="addProduct" (closeModalEvent)="modalToggle('addProduct', productId, product)" />
+<app-delete-product-modal *ngIf="deleteProduct" [isModalOpened]="deleteProduct" [productId]="productId" (closeModalEvent)="modalToggle('deleteProduct', productId, product)" />
+<app-edit-product-modal *ngIf="editProduct" [isModalOpened]="editProduct" [ProductEdit]="product" [productId]="productId" (closeModalEvent)="modalToggle('editProduct', productId, product)" />
 
 <!-- Rest of your HTML code remains the same -->
 
@@ -14,7 +15,7 @@
       class="ml-auto mr-14 h-12 items-center cursor-pointer hover:text-gray-500 hover:bg-emerald-200 rounded-lg p-2 flex bg-gray-200 text-[3rem]"
       data-modal-target="add-modal"
       data-modal-toggle="add-modal"
-      (click)="modalToggle('addProduct', productId)"
+      (click)="modalToggle('addProduct', productId, product)"
     >
       +
     </p>
@@ -41,7 +42,7 @@
         viewBox="0 0 18 20"
         data-modal-target="popup-modal"
         data-modal-toggle="popup-modal"
-        (click)="modalToggle('deleteProduct', product.id)"
+        (click)="modalToggle('deleteProduct', product.id , product)"
       >
         <path
           stroke="currentColor"
@@ -67,6 +68,7 @@
           <button
             data-modal-target="crud-modal"
             data-modal-toggle="crud-modal"
+            (click)="modalToggle('editProduct', productId, product)"
             class="bg-indigo-100 hover:bg-indigo-300 px-2 text-indigo-600 ml-44 p-1 rounded-lg"
           >
             Edit
