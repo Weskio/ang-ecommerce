@@ -107,7 +107,7 @@ export class HomeComponent{
     else if(modalType === 'editProduct'){
       this.editProduct = !this.editProduct;
       this.product = Product
-      this.productId = productId
+      this.productId = this.product.id
       //console.log(Product)
     }
   }

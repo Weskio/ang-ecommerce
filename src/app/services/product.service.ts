@@ -417,15 +417,17 @@ export class ProductService {
   editProduct(product: Product, id: number) {
     //console.log(product)
     // console.log(product.title)
-    product.id = id;
-    console.log(product.id)
-    const index = this.products.findIndex((p) => p.id === product.id);
+    // product.id = id;
+    // console.log(product.id)
+    const index = this.products.findIndex((p) => p.id === id);
   //  console.log(index)
+  //console.log(product.id)
    // console.log(product.title)
     if (index !== -1) {
       console.log(product.title)
+       console.log(index)
       if (index < this.initialProducts.length) {
-        //console.log(product)
+       
         this.initialProducts[index].title = product.title;
         this.initialProducts[index].price = product.price;
         this.initialProducts[index].description = product.description;
