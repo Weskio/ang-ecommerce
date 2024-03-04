@@ -22,14 +22,6 @@ export class DeleteProductModalComponent {
 
     deleteProduct(){
       this.productService.deleteProduct(this.productId)
-      Swal.fire({
-        // position: 'top-end',
-         icon: 'error',
-         title: 'Product deleted',
-         text: `Product '${this.productId}' deleted successful`,
-         showConfirmButton: false,
-         timer: 1500,
-       });
       this.closeModal()
     }
 

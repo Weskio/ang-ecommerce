@@ -24,14 +24,14 @@
         <form class="form" [formGroup]="loginForm" (ngSubmit)="loginUser()">
           <input
             type="email"
-            class="placeholder:ml-12 w-full mb-5 focus:ring-0 focus:outline-none focus:border-purple-600"
+            class="placeholder:ml-12 w-full mb-5 p-2 border-b-2 border-purple-300 focus:ring-0 focus:outline-none focus:border-purple-600"
             maxlength="256"
             formControlName="email"
             data-name="Emai"
             placeholder="Your e-mail"
           /><input
             type="password"
-            class="w-full mb-5 focus:ring-0 focus:outline-none focus:border-purple-600"
+            class="w-full mb-5 p-2 border-b-2 border-purple-300 ocus:ring-0 focus:outline-none focus:border-purple-600"
             maxlength="256"
             name="Password"
             formControlName="password"
@@ -42,9 +42,9 @@
             required=""
           />
           <div class="links-wrap">
-            <div class="links">
-              <a href="signup" class="link">Register</a
-              ><a data-ms-modal="forgot-password" href="#" class="link"
+            <div class="flex gap-5">
+              <a href="signup" class="hover:text-purple-600 transition-all duration-150">Register</a
+              ><a data-ms-modal="forgot-password" href="#" class="hover:text-purple-600"
                 >Forgot Password?</a
               >
             </div>
@@ -62,7 +62,7 @@
               <button
               [disabled]="loginForm.invalid"
               type="submit"
-              class="bg-blue-600 p-2 rounded-lg hover:bg-blue-800 text-white disabled:opacity-30"
+              class="bg-purple-600 p-2 rounded-lg hover:bg-purple-800 text-white disabled:opacity-30"
             >
               Sign In
             </button>

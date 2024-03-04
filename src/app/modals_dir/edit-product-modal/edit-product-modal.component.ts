@@ -7,6 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-product-modal',

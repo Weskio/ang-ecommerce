@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -349,25 +350,22 @@ export class ProductService {
     },
   ];
 
-
   ngOnInit() {
     localStorage.setItem('localProducts', JSON.stringify(this.localProducts));
 
     const storedProducts = localStorage.getItem('localProducts');
     const Products = localStorage.getItem('Products');
 
-    if(storedProducts && Products !== null ){
+    if (storedProducts && Products !== null) {
       this.initialProducts = JSON.parse(storedProducts);
       this.customProducts = JSON.parse(Products);
-      this.products = this.initialProducts.concat(this.customProducts)
-    }
-    else if(this.customProducts.length === 0 && storedProducts !==null){
+      this.products = this.initialProducts.concat(this.customProducts);
+    } else if (this.customProducts.length === 0 && storedProducts !== null) {
       this.initialProducts = JSON.parse(storedProducts);
-       this.products = this.initialProducts
+      this.products = this.initialProducts;
+    } else {
+      console.error('No products found in localStorage.');
     }
-   else {
-        console.error('No products found in localStorage.');
-       }
   }
 
   getProducts() {
@@ -381,12 +379,12 @@ export class ProductService {
   getFeaturedProducts() {
     return this.products.filter((item) => item.featured === true);
   }
-  
+
   addProduct(product: Product) {
     product.id = this.getNextProductId();
     this.customProducts.push(product);
     localStorage.setItem('Products', JSON.stringify(this.customProducts));
-   // console.log(product);
+    location.reload();
   }
 
   getNextProductId(): number {
@@ -403,6 +401,14 @@ export class ProductService {
       this.products.splice(index, 1);
       if (index < this.initialProducts.length) {
         this.initialProducts.splice(index, 1);
+        Swal.fire({
+          // position: 'top-end',
+           icon: 'error',
+           title: 'Product deleted',
+           text: `Product deleted successful`,
+           showConfirmButton: false,
+           timer: 1500,
+         });
       } else {
         const customIndex = index - this.initialProducts.length;
         this.customProducts.splice(customIndex, 1);
@@ -410,30 +416,20 @@ export class ProductService {
     }
 
     localStorage.setItem('localProducts', JSON.stringify(this.products));
-      localStorage.setItem('Products', JSON.stringify(this.customProducts));
+    localStorage.setItem('Products', JSON.stringify(this.customProducts));
   }
-  
 
   editProduct(product: Product, id: number) {
-    //console.log(product)
-    // console.log(product.title)
-    // product.id = id;
-    // console.log(product.id)
     const index = this.products.findIndex((p) => p.id === id);
-  //  console.log(index)
-  //console.log(product.id)
-   // console.log(product.title)
     if (index !== -1) {
-      console.log(product.title)
-       console.log(index)
+      console.log(product.title);
+      console.log(index);
       if (index < this.initialProducts.length) {
-       
         this.initialProducts[index].title = product.title;
         this.initialProducts[index].price = product.price;
         this.initialProducts[index].description = product.description;
         this.initialProducts[index].category = product.category;
       } else {
-        //console.log(product)
         const customIndex = index - this.initialProducts.length;
         this.customProducts[customIndex].title = product.title;
         this.customProducts[customIndex].price = product.price;
@@ -444,11 +440,7 @@ export class ProductService {
       localStorage.setItem('localProducts', JSON.stringify(this.products));
       localStorage.setItem('Products', JSON.stringify(this.customProducts));
     }
-    else{
-      //console.error('Product not found.')
-    }
   }
-  
 
   constructor() {}
 }
