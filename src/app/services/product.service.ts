@@ -386,7 +386,7 @@ export class ProductService {
     product.id = this.getNextProductId();
     this.customProducts.push(product);
     localStorage.setItem('Products', JSON.stringify(this.customProducts));
-    console.log(product);
+   // console.log(product);
   }
 
   getNextProductId(): number {
@@ -445,7 +445,7 @@ export class ProductService {
       localStorage.setItem('Products', JSON.stringify(this.customProducts));
     }
     else{
-      console.error('Product not found.')
+      //console.error('Product not found.')
     }
   }
   

@@ -1,7 +1,7 @@
 <app-cart *ngIf="isCartShown" (closeCart)="isCartShown = false" />
 
 <div class="header flex p-4 font-semibold">
-  <div class="left ml-8 p-8 font-medium">
+  <div class="left hidden lg:block ml-8 p-8 font-medium">
     <ul class="flex gap-4 cursor-pointer">
       <a
         href="/all-products"
@@ -54,10 +54,10 @@
       </svg>
       } @else {
       <a href="/login"
-        ><li class="hover:-translate-y-1 ease-in-out duration-300">Login</li></a
+        ><li class="hover:-translate-y-1 ease-in-out duration-300  hidden lg:block">Login</li></a
       >
       <a href="/signup">
-        <li class="hover:-translate-y-1 ease-in-out duration-300">Register</li>
+        <li class="hover:-translate-y-1 ease-in-out duration-300  hidden lg:block">Register</li>
       </a>
 
       <button (click)="showCart()">

@@ -1,4 +1,4 @@
-<div class="banner w-full h-[100vh] flex items-center bg-cover bg-fixed">
+<div class="banner w-full h-[100vh] flex items-center bg-center bg-cover bg-fixed">
   @defer () {
   <div
     class="newsletter bg-white p-3 mx-14 lg:mx-0 lg:w-[25vw] lg:ml-auto lg:mr-auto"
@@ -48,7 +48,7 @@
   <div class="body flex">
     <div class="big ml-auto mr-auto">
       <p
-        class="text-[2.7rem] leading-[44px] lg:text-[4rem] font-bold news-title lg:leading-[62px] ml-auto mr-32 lg:mr-60 mt-24 w-24"
+        class="text-[2.7rem] leading-[44px] lg:text-[4rem] font-bold news-title lg:leading-[62px] ml-auto mr-36 lg:mr-60 mt-24 w-24"
       >
         Discover <span class="italic">radiant skincare</span>
       </p>
@@ -63,16 +63,15 @@
       class="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
     >
       <div
-        class="snap-center group lg:w-[40%] w-[60%] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
+        class="snap-center group lg:w-[40%] md:w-[80%] w-[160%] h-[60vh] relative inline-block m-4 hover:scale-105 ease-in-out duration-300"
         *ngFor="let product of featuredProducts"
       >
         <div class="service-content-wrapper">
           <img
             [src]="product.image"
-            loading="lazy"
             width="474"
             alt=""
-            class="whatson-img w-full h-[60vh] md:h-[55vh] lg:lg:h-[60vh] object-cover"
+            class="whatson-img w-full h-[60vh] object-cover"
           />
 
           <a [routerLink]="['/single-product', product.id]">
@@ -125,8 +124,8 @@
   </p>
 </div>
 
-<div class="additional-info px-12 flex gap-2 lg:gap-16 lg:px-44 pb-32">
-  <div class="pic1">
+<div class="additional-info flex gap-2 lg:gap-16 lg:px-24 w-full pb-32">
+  <div class="pic1 ml-5 lg:ml-0">
     <img
       src="https://i.pinimg.com/564x/03/97/03/039703c15c4cd6b8b0c4671666d24ff0.jpg"
       alt=""
@@ -134,7 +133,7 @@
       class="lg:ml-auto rounded-md cursor-pointer w-[42vw] lg:h-[70vh] object-cover"
     />
 
-    <p class="lg:w-96 w-[92%] ml-auto mr-24 font-[500] mt-6 lg:mt-24">
+    <p class="lg:w-96 w-[92%] ml-auto mr-24 font-[500] mt-6 lg:mt-12">
       Each of our formulations embodies meticulous craftsmanship, a fusion of
       premium ingredients to attain harmony, potent effects without added
       fillers.
@@ -148,7 +147,7 @@
   <img
     src="https://i.pinimg.com/564x/9a/2a/7a/9a2a7a3f38072fb7f85d727ce8716682.jpg"
     alt=""
-    class="w-[42vw] lg:h-[90vh] mt-24 rounded-md object-cover"
+    class="w-[42vw] lg:h-[90vh] mt-24  mr-4 lg:mr-0 rounded-md object-cover"
   />
 </div>
 
